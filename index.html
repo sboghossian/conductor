@@ -253,30 +253,23 @@ h1.hero-h .fade{color:var(--muted)}
 <header class="hero" id="top">
   <div class="hero-glow"></div>
   <div class="wrap hero-in">
-    <span class="pill reveal"><span class="tag">v0.1 · MIT</span> <b>100% open source.</b>&nbsp;Self-host, bring your own key.</span>
     <h1 class="hero-h reveal">You conduct.<br><span class="fade">Your agents build.</span></h1>
-    <p class="hero-sub reveal">A visual, node-based canvas for running fleets of coding agents. Wire your prompt and files through memory, tools and skills — a fleet ships in parallel while you watch every move, cost and result, converging into one report.</p>
-    <div class="pb-wrap reveal">
-      <div class="promptbox">
-        <textarea class="pb-input" id="hero-pb" rows="2" placeholder="Describe what your fleet should build…  “migrate our marketing site to the new design system, keep every redirect”"></textarea>
-        <div class="pb-bar"><button type="button" class="pbtn" id="hero-pb-voice"><span data-ic="mic"></span> Voice</button><button type="button" class="pbtn"><span data-ic="dataroom"></span> Attach</button><span class="grow"></span><span class="pb-hint">⏎ to start building</span><button type="button" class="pb-send" id="hero-pb-send" aria-label="Start building"><span data-ic="send"></span></button></div>
+    <p class="hero-sub reveal">A visual canvas for running a fleet of coding agents. Wire the work once — they ship in parallel while you watch every move.</p>
+    <div class="hero-box reveal">
+      <div class="hb-tabs">
+        <button type="button" class="on" data-hb="prompt"><span data-ic="bolt"></span> Prompt</button>
+        <button type="button" data-hb="code"><span data-ic="terminal"></span> Terminal</button>
       </div>
-    </div>
-    <div class="hero-cta reveal">
-      <button class="btn btn-primary btn-lg" id="cta-hero">Get started — it's free</button>
-      <a class="btn btn-ghost btn-lg" href="#install">Install locally</a>
-    </div>
-    <div class="install reveal" id="install-hero">
-      <div class="install-box">
-        <span class="pr">$</span>
-        <code id="install-cmd">curl -fsSL https://conductor.build/install | sh</code>
-        <button class="cpy" id="install-copy" data-copy="curl -fsSL https://conductor.build/install | sh"><span class="ci"></span><span class="lbl">Copy</span></button>
+      <div class="hb-panel prompt on">
+        <div class="promptbox">
+          <textarea class="pb-input" id="hero-pb" rows="2" placeholder="Describe what your fleet should build…  “migrate our site to the new design system, keep every redirect”"></textarea>
+          <div class="pb-bar"><button type="button" class="pbtn" id="hero-pb-voice"><span data-ic="mic"></span> Voice</button><span class="grow"></span><span class="pb-hint">⏎ to go</span><button type="button" class="pb-send" id="hero-pb-send" aria-label="Go"><span data-ic="send"></span></button></div>
+        </div>
       </div>
-      <div class="install-note">
-        <span><i class="d"></i> macOS · Linux · WSL</span>
-        <span><i class="d"></i> No account</span>
-        <span><i class="d"></i> Bring your own key</span>
+      <div class="hb-panel code">
+        <div class="hb-code"><span class="pr">$</span><code id="hb-cmd">curl -fsSL https://conductor.build/install | sh</code><button type="button" class="cpy" id="hb-copy" data-copy="curl -fsSL https://conductor.build/install | sh"><span class="ci"></span>Copy</button></div>
       </div>
+      <div class="hb-note">Hit <b style="color:var(--ink-2)">go</b> — the whole workspace opens in your browser. No signup.</div>
     </div>
   </div>
   <div class="preview-wrap reveal">
@@ -879,6 +872,58 @@ h1.hero-h .fade{color:var(--muted)}
 .branch-lbl.warn{color:var(--warn); border-color:var(--warn-soft)}
 .branch-sub{position:absolute; z-index:2; transform:translate(-50%,-50%); font-family:var(--mono); font-size:.58rem; color:var(--muted); white-space:nowrap}
 
+/* ===== v9 — topbar redesign, no sidebar, toolbox, brain-hub ===== */
+.app-chrome{padding:10px 16px; gap:10px}
+.app-chrome .brand{font-weight:600; font-size:.98rem; gap:8px}
+.chrome-ic{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);display:grid;place-items:center;position:relative;flex:none}
+.chrome-ic:hover{color:var(--ink);border-color:var(--line-strong)} .chrome-ic svg{width:16px;height:16px}
+.chrome-ic .kbd{font-family:var(--mono);font-size:.62rem}
+.chrome-ic .badge{position:absolute;top:-5px;right:-5px;font-family:var(--mono);font-size:.54rem;background:var(--accent);color:#fff;border-radius:100px;padding:1px 5px;line-height:1.35}
+.crumb{display:flex;align-items:center;gap:8px;font-size:.9rem;min-width:0}
+.crumb-fleet{color:var(--ink-2);font-family:var(--sans);font-size:.9rem;background:none;border:none;padding:4px 7px;border-radius:7px;display:inline-flex;align-items:center;gap:6px}
+.crumb-fleet:hover{background:var(--surface-3);color:var(--ink)} .crumb-fleet svg{width:14px;height:14px}
+.crumb .sep{color:var(--muted)}
+.proj-drop{position:relative}
+.proj-btn{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.9rem;color:var(--ink);background:none;border:none;padding:4px 7px;border-radius:7px;white-space:nowrap}
+.proj-btn:hover{background:var(--surface-3)} .proj-btn svg{width:12px;height:12px;color:var(--muted)}
+.proj-menu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;box-shadow:var(--shadow-lg);padding:6px;min-width:238px;display:none}
+.proj-menu.open{display:block}
+.proj-menu button{display:flex;width:100%;text-align:left;align-items:center;gap:9px;border:none;background:none;padding:9px 10px;border-radius:8px;color:var(--ink)}
+.proj-menu button:hover,.proj-menu button.on{background:var(--surface-2)}
+.proj-menu button .sd{width:7px;height:7px;border-radius:50%;flex:none;margin-top:4px;align-self:flex-start}
+.proj-menu button .pm-b{min-width:0} .proj-menu button .pm-t{font-size:.85rem;font-weight:550} .proj-menu button .pm-s{font-family:var(--mono);font-size:.6rem;color:var(--muted)}
+.proj-status{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.7rem;color:var(--warn);white-space:nowrap}
+.proj-status i{width:7px;height:7px;border-radius:50%;background:var(--warn);animation:soft 1.3s infinite}
+.proj-status.ok{color:var(--good)} .proj-status.ok i{background:var(--good);animation:none}
+.proj-status.idle{color:var(--muted)} .proj-status.idle i{background:var(--line-strong);animation:none}
+.app.paused .proj-status i{animation:none}
+.chrome-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.chrome-progress{height:2px;background:var(--line);position:relative;overflow:hidden;flex:none}
+.chrome-progress i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s linear}
+/* toolbox node */
+.node-tools2 .card{width:266px}
+.toolbox{margin-top:10px}
+.tb-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.tb-item{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);padding:6px 8px}
+.tb-item .ti{width:23px;height:23px;border-radius:6px;display:grid;place-items:center;flex:none;background:var(--surface);border:1px solid var(--line)} .tb-item .ti svg{width:12px;height:12px;color:var(--ink-2)}
+.tb-item .tb-b{min-width:0} .tb-item .tn{font-weight:600;font-size:.84rem;font-variant-numeric:tabular-nums;line-height:1} .tb-item .tl{font-family:var(--mono);font-size:.55rem;color:var(--muted)}
+.tb-machines{display:flex;gap:5px;margin-top:9px;flex-wrap:wrap;align-items:center}
+.tb-machines .mlbl{font-family:var(--mono);font-size:.55rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.tb-machines span.m{font-family:var(--mono);font-size:.58rem;color:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--surface-2);display:inline-flex;align-items:center;gap:5px}
+.tb-machines span.m .d{width:5px;height:5px;border-radius:50%;background:var(--good)}
+/* simplified hero: prompt / terminal toggle */
+.hero-box{max-width:600px;margin:26px auto 0}
+.hb-tabs{display:inline-flex;gap:3px;padding:3px;background:var(--surface-3);border-radius:10px;margin-bottom:12px}
+.hb-tabs button{border:none;background:none;font-family:var(--mono);font-size:.74rem;color:var(--muted);padding:6px 14px;border-radius:7px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.hb-tabs button svg{width:13px;height:13px}
+.hb-tabs button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
+.hb-panel{display:none} .hb-panel.on{display:block;animation:fade .3s ease}
+.hb-code{background:#14120F;border:1px solid #2a2620;border-radius:14px;padding:16px;box-shadow:var(--shadow-lg);font-family:var(--mono);text-align:left;display:flex;align-items:center;gap:12px}
+.hb-code .pr{color:#5fbf8a;flex:none} .hb-code code{flex:1;color:#e8e2d6;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb-code .cpy{flex:none;display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.72rem;padding:8px 12px;border-radius:9px;border:1px solid #3a342c;background:#201d18;color:#c7c0b2}
+.hb-code .cpy:hover{border-color:var(--accent);color:#fff} .hb-code .cpy svg{width:13px;height:13px}
+.hb-note{margin-top:11px;font-family:var(--mono);font-size:.64rem;color:var(--muted);text-align:center}
+
 /* ===== ALEPH console — deliberately its own dark, cinematic world ===== */
 .voice-overlay.aleph{background:radial-gradient(130% 100% at 50% -10%, #10131f 0%, #06070c 68%); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px); color:#eef0f6; display:none; flex-direction:column; gap:0; padding:0; align-items:stretch; justify-content:flex-start}
 .voice-overlay.aleph.open{display:flex}
@@ -945,41 +990,28 @@ h1.hero-h .fade{color:var(--muted)}
 <!-- ============================== APP ============================== -->
 <div class="app" id="app" aria-hidden="true">
   <div class="app-chrome">
-    <a class="brand"><span class="mk" id="chromemk"></span></a>
-    <div class="seg" id="frame-seg">
-      <button type="button" class="on" data-frame="browser"><span class="fi" data-ic="browser"></span>Browser</button>
-      <button type="button" data-frame="desktop"><span class="fi" data-ic="desktop"></span>Desktop</button>
+    <a class="brand"><span class="mk" id="chromemk"></span> Agent build</a>
+    <button type="button" class="chrome-ic" id="tb-settings" title="Settings" aria-label="Settings"><span data-ic="settings"></span></button>
+    <div class="crumb">
+      <button type="button" class="crumb-fleet" id="tb-fleet"><span data-ic="fleet"></span> Fleet</button>
+      <span class="sep">/</span>
+      <div class="proj-drop">
+        <button type="button" class="proj-btn" id="proj-btn"><span id="proj-name">Website migration</span> <span data-ic="chevD"></span></button>
+        <div class="proj-menu" id="proj-menu"></div>
+      </div>
+      <span class="proj-status run" id="proj-status"><i></i> <span id="proj-status-t">Running</span></span>
     </div>
-    <div class="cmd" id="cmdbar">
-      <span class="mk" id="cmdmk"></span> <b id="cmd-title">Agentic build</b> <span class="path" id="cmd-path">· website-migration</span>
-      <span class="kbd">⌘K</span>
+    <div class="chrome-right">
+      <button type="button" class="chrome-ic" id="tb-cmd" title="Command palette (⌘K)" aria-label="Command palette"><span class="kbd">⌘K</span></button>
+      <button type="button" class="chrome-ic" id="tb-inbox" title="Inbox" aria-label="Inbox"><span data-ic="mail"></span><span class="badge">3</span></button>
+      <button type="button" class="chrome-ic" id="tb-edits" title="Quick edits" aria-label="Quick edits"><span data-ic="edit"></span></button>
+      <button type="button" class="chrome-ic" id="tb-voice" title="ALEPH" aria-label="ALEPH voice"><span data-ic="mic"></span></button>
+      <button type="button" class="chrome-x" id="app-exit" aria-label="Exit to site" title="Exit to site"><span data-ic="x"></span></button>
     </div>
-    <div class="avatars" id="avatars"></div>
-    <span class="chrome-live"><i></i> live</span>
-    <button type="button" class="chrome-x" id="app-exit" aria-label="Exit to site" title="Exit to site"><span data-ic="x"></span></button>
   </div>
+  <div class="chrome-progress"><i id="chrome-prog"></i></div>
 
   <div class="app-body">
-    <button type="button" class="rail-collapse" id="rail-toggle" aria-label="Collapse sidebar"><span data-ic="chevL"></span></button>
-    <aside class="rail" id="rail">
-      <div class="rail-nav" id="railnav">
-        <div class="rn on" data-view="canvas"><span data-ic="graph"></span>Canvas</div>
-        <div class="rn" data-view="fleet"><span data-ic="fleet"></span>Fleet<span class="badge">6</span></div>
-        <div class="rn" data-view="inbox"><span data-ic="inbox"></span>Inbox<span class="badge">3</span></div>
-        <div class="rn" data-view="memory"><span data-ic="memory"></span>Memory</div>
-        <div class="rn" data-view="reports"><span data-ic="report"></span>Reports</div>
-        <div class="rn" data-view="settings"><span data-ic="settings"></span>Settings</div>
-      </div>
-      <div class="rail-sep"></div>
-      <div class="rail-hd">Sessions <button type="button" class="add" id="sess-add" aria-label="New session"><span data-ic="plus"></span></button></div>
-      <div id="sesslist"></div>
-      <div class="rail-foot">
-        <div class="rf"><span class="d"></span> 3 runtimes live</div>
-        <div class="rf"><span class="d" style="background:var(--blue)"></span> memory · 214 facts</div>
-        <div class="rf"><span class="d" style="background:var(--warn)"></span> 1 human gate open</div>
-      </div>
-    </aside>
-
     <div class="stage" id="stage">
       <!-- CANVAS -->
       <section class="view canvas on" data-view="canvas">
@@ -994,11 +1026,6 @@ h1.hero-h .fade{color:var(--muted)}
         </div>
         <div class="viewport" id="viewport">
           <div class="flow-hero">
-            <div class="fh-notes">
-              <div class="fh-note set"><h6>Settings</h6>Models · Connectors<br>Guardrails<br>Appearance<br>Lifecycle</div>
-              <div class="fh-note legend"><h6>Status</h6><div class="lg-row"><span class="d" style="background:var(--blue)"></span>Queued</div><div class="lg-row"><span class="d" style="background:var(--warn)"></span>Running</div><div class="lg-row"><span class="d" style="background:var(--ink-2)"></span>In review</div><div class="lg-row"><span class="d" style="background:var(--good)"></span>Done</div></div>
-              <div class="fh-note inbox"><h6>Inbox · Quick edits</h6><div class="lg-row"><span class="d" style="background:var(--red)"></span>Urgent</div><div class="lg-row"><span class="d" style="background:var(--warn)"></span>Needs reply</div><div class="lg-row"><span class="d" style="background:var(--blue)"></span>FYI</div><div class="lg-row"><span class="d" style="background:var(--muted)"></span>Noise</div></div>
-            </div>
             <div class="fh-hi">Hi Steph,<span class="cur"></span></div>
             <div class="pb-wrap">
               <div class="pb-report"><div class="pb-drop"><button type="button" class="pb-drop-btn" id="pb-drop-btn"><span data-ic="report"></span> <span id="pb-drop-lbl">Daily standup</span> <span data-ic="chevD"></span></button><div class="pb-menu" id="pb-menu"></div></div></div>
@@ -1282,7 +1309,13 @@ var IC={
   figma:'<svg viewBox="0 0 24 24"><g stroke="none"><path d="M9 3h3v6H9a3 3 0 010-6z" fill="#F24E1E"/><path d="M12 3h3a3 3 0 010 6h-3z" fill="#FF7262"/><path d="M9 9h3v6H9a3 3 0 010-6z" fill="#A259FF"/><circle cx="15" cy="12" r="3" fill="#1ABCFE"/><path d="M9 15h3v3a3 3 0 11-3-3z" fill="#0ACF83"/></g></svg>',
   posthog:'<svg viewBox="0 0 24 24" fill="#F9BD2B"><rect x="3" y="14" width="4" height="7" rx="1"/><rect x="10" y="9" width="4" height="12" rx="1"/><rect x="17" y="4" width="4" height="17" rx="1"/></svg>',
   meta:'<svg viewBox="0 0 24 24" fill="none" stroke="#4C6EF5" stroke-width="2"><path d="M3 15c1.5-6 4-9 6-9 3 0 3 12 6 12s4.5-3 6-9"/></svg>',
-  obsidian:'<svg viewBox="0 0 24 24"><path d="M12 2 5 8v8l7 6 7-6V8z" fill="#7C5CFC"/><path d="M12 6v12" stroke="#fff" stroke-width="1.2" opacity=".5"/></svg>'
+  obsidian:'<svg viewBox="0 0 24 24"><path d="M12 2 5 8v8l7 6 7-6V8z" fill="#7C5CFC"/><path d="M12 6v12" stroke="#fff" stroke-width="1.2" opacity=".5"/></svg>',
+  xai:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.2 3h3.5l4.1 5.9L15.8 3H19l-6.1 8 6.5 10h-3.5l-4.6-6.7L6.3 21H3l7-9.1z"/></svg>',
+  cursor:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3 4.5 7.5v9L12 21l7.5-4.5v-9z"/><path d="M12 12l7.5-4.5M12 12v9M12 12 4.5 7.5"/></svg>',
+  lovable:'<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.4A3.6 3.6 0 0112 7.2a3.6 3.6 0 017 3.4C19 15.6 12 20 12 20z" fill="#FF4D82"/></svg>',
+  harness:'<svg viewBox="0 0 24 24" fill="none" stroke="#4C6EF5" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18M6 6l6 3 6-3M6 12l6 3 6-3M6 18l6-3"/></svg>',
+  edit:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18 10l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>'
 };
 /* Conductor brand mark — a mini orchestration graph */
 var CMK='<svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="5" fill="var(--accent)"/><circle cx="6" cy="8" r="2.6" fill="none" stroke="var(--ink)" stroke-width="1.7"/><circle cx="26" cy="8" r="2.6" fill="none" stroke="var(--ink)" stroke-width="1.7"/><circle cx="16" cy="28" r="2.6" fill="none" stroke="var(--ink)" stroke-width="1.7"/><path d="M8 9.5 13 13M24 9.5 19 13M16 21v4.4" stroke="var(--ink-2)" stroke-width="1.5" stroke-linecap="round"/></svg>';
@@ -1334,8 +1367,8 @@ function initLanding(){
   // hero preview mini-graph (alive)
   buildPreview();
   // install copy
-  $('#install-copy').addEventListener('click',function(){ var t=this.getAttribute('data-copy'); copyText(t); var l=$('.lbl',this); l.textContent='Copied'; this.querySelector('.ci').innerHTML=ic('check'); var self=this; setTimeout(function(){l.textContent='Copy'; self.querySelector('.ci').innerHTML='';},1500); toast('Install command copied','copy'); });
-  $('#install-copy .ci').innerHTML='';
+  var hbCopy=$('#hb-copy'); if(hbCopy){ hbCopy.addEventListener('click',function(){ copyText(this.getAttribute('data-copy')); this.querySelector('.ci').innerHTML=ic('check'); var self=this; setTimeout(function(){self.querySelector('.ci').innerHTML='';},1500); toast('Install command copied','copy'); }); }
+  $$('.hb-tabs button').forEach(function(b){ b.addEventListener('click',function(){ $$('.hb-tabs button').forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); $$('.hb-panel').forEach(function(p){ p.classList.toggle('on', p.classList.contains(b.dataset.hb)); }); }); });
   // license modal
   $('#foot-license').addEventListener('click',function(e){e.preventDefault(); openLicense();});
   // CTAs → boot
@@ -1392,8 +1425,8 @@ function aById(id){for(var i=0;i<AGENTS.length;i++)if(AGENTS[i].id===id)return A
 function NODEDEFS(){return [
  {id:'hook',type:'hook',raw:1,x:452,y:8,
    body:'<div class="n-head"><span class="hook-ico">'+ic('bolt')+'</span><div><div class="n-ttl">Hook</div><div class="n-sub">intent detected · router + recall</div></div></div>'},
- {id:'tools',type:'tools2',x:196,y:150,ico:'skill',title:'tools',sub:'Plan',
-   body:'<div class="flow-tag">skills · MCPs · prompts</div>'},
+ {id:'tools',type:'tools2',x:110,y:150,ico:'skill',title:'Toolbox',sub:'everything the fleet can use',
+   body:toolboxHtml()},
  {id:'brain',type:'brain2',x:486,y:92,ico:'brain',title:'Brain',sub:'context · memory',
    body:'<div class="brain-rows"><div class="br"><span>facts / tiles</span><b>206</b></div><div class="br"><span>memory result index</span><b>on</b></div><div class="br"><span>code graph</span><b>live</b></div><div class="br"><span>vector recall</span><b>hybrid</b></div></div>'},
  {id:'orch',type:'orch2',raw:1,x:388,y:338,
@@ -1414,6 +1447,8 @@ function fchip(n){return '<span class="fchip">'+ic('dataroom')+n+'</span>';}
 function lg(m){return '<span class="lg">'+ic(m)+'</span>';}
 function modelChip(node,mid){var m=mById(mid);return '<button type="button" class="mchip" data-role="model" data-node="'+node+'">'+ic(m.mk)+m.label.replace('Claude ','')+'<span class="cv">'+ic('chevD')+'</span></button>';}
 function agentChip(node,aid){var a=aById(aid);return '<button type="button" class="mchip tchip" data-role="agent" data-node="'+node+'">'+ic('agent')+a.label+'<span class="cv">'+ic('chevD')+'</span></button>';}
+function tbItem(icn,n,l){return '<div class="tb-item"><span class="ti">'+ic(icn)+'</span><div class="tb-b"><div class="tn">'+n+'</div><div class="tl">'+l+'</div></div></div>';}
+function toolboxHtml(){return '<div class="toolbox"><div class="tb-grid">'+tbItem('skill',118,'skills')+tbItem('link',6,'MCP servers')+tbItem('report',9,'prompts')+tbItem('bolt',18,'hook scripts')+tbItem('github',12,'connectors')+tbItem('clock',11,'scheduled')+'</div><div class="tb-machines"><span class="mlbl">machines</span><span class="m"><span class="d"></span>macbook</span><span class="m"><span class="d"></span>mac mini</span><span class="m"><span class="d"></span>iCloud</span><span class="m"><span class="d"></span>GitHub</span></div></div>';}
 
 var EDGEDEFS=[
  {f:'hook',t:'brain'},
@@ -1454,15 +1489,12 @@ var WORLD=(function(){
       if(n.round)renderRounds(n.id,n.rounds,n.round);
       wireNode(el,n);
     });
-    var counts=document.createElement('div'); counts.className='counts'; counts.style.left='6px'; counts.style.top='150px';
-    counts.innerHTML='<div class="cr"><span class="cn">18</span><span class="cl"><b>hook scripts</b><small>lifecycle</small></span></div><div class="cr"><span class="cn">12</span><span class="cl"><b>connectors</b><small>cloud</small></span></div><div class="cr"><span class="cn">118</span><span class="cl"><b>skills</b><small>router · prompts</small></span></div><div class="cr"><span class="cn">11</span><span class="cl"><b>scheduled</b><small>cron jobs</small></span></div><div class="cr"><span class="cn">3</span><span class="cl"><b>machines</b><small>&amp; synced</small></span></div><div class="lc">macbook · mac mini · iCloud · GitHub</div><div class="machines"><span class="mbox"></span><span class="mbox"></span><span class="mbox"></span></div>';
-    world.appendChild(counts);
-    var ml=document.createElement('div'); ml.className='mlist'; ml.style.left='724px'; ml.style.top='344px';
-    ml.innerHTML='<div class="ml-hd">Harness</div><div class="mrow on">'+ic('ollama')+'llama local</div><div class="mrow">'+ic('claude')+'claude Code</div><div class="mrow">'+ic('openai')+'OpenAI Codex</div><div class="mrow">'+ic('chip')+'X Build</div><div class="mrow">'+ic('chip')+'Cursor</div><div class="mrow">'+ic('chip')+'lovable</div><div class="add">'+ic('plus')+'Add</div><div class="qa2"><b>'+ic('swap')+'Model</b><b>'+ic('stop')+'Stop</b><b>'+ic('pause')+'Pause</b></div>';
+    var ml=document.createElement('div'); ml.className='mlist'; ml.style.left='726px'; ml.style.top='340px';
+    ml.innerHTML='<div class="ml-hd">Runtimes</div><div class="mrow">'+ic('harness')+'Harness</div><div class="mrow on">'+ic('ollama')+'llama local</div><div class="mrow">'+ic('claude')+'claude Code</div><div class="mrow">'+ic('openai')+'OpenAI Codex</div><div class="mrow">'+ic('xai')+'X Build</div><div class="mrow">'+ic('cursor')+'Cursor</div><div class="mrow">'+ic('lovable')+'lovable</div><div class="add">'+ic('plus')+'Add</div><div class="qa2"><b>'+ic('swap')+'Model</b><b>'+ic('stop')+'Stop</b><b>'+ic('pause')+'Pause</b></div>';
     world.appendChild(ml);
-    EDGEDEFS.forEach(function(e){ var edge={from:e.f,to:e.t,dash:!!e.dash,beads:[],subEls:[],label:null,path:null};
-      if(!e.beads){ var p=document.createElementNS(svgns,'path'); p.setAttribute('class',e.dash?'wire-dash':'bead'); svg.appendChild(p); edge.path=p; }
-      else { for(var i=0;i<e.beads;i++){ var c=document.createElementNS(svgns,'circle'); c.setAttribute('r','5'); c.setAttribute('class','bead-dot bd-pending'); svg.appendChild(c); edge.beads.push(c); } }
+    EDGEDEFS.forEach(function(e){ var edge={from:e.f,to:e.t,dash:!!(e.dash||e.beads),beads:[],subEls:[],label:null,path:null};
+      var p=document.createElementNS(svgns,'path'); p.setAttribute('class',(e.dash||e.beads)?'wire-dash':'bead'); svg.appendChild(p); edge.path=p;
+      if(e.beads){ for(var i=0;i<e.beads;i++){ var c=document.createElementNS(svgns,'circle'); c.setAttribute('r','5'); c.setAttribute('class','bead-dot bd-pending'); svg.appendChild(c); edge.beads.push(c); } }
       if(e.label){ var l=document.createElement('div'); l.className='branch-lbl'; l.innerHTML=(e.label.indexOf('PR')===0?'<span class="gh">'+ic('github')+'</span>':'')+e.label; world.appendChild(l); edge.label=l; }
       if(e.subs){ e.subs.forEach(function(s){ var sd=document.createElement('div'); sd.className='branch-sub'; sd.textContent=s; world.appendChild(sd); edge.subEls.push(sd); }); }
       edges.push(edge);
@@ -1524,6 +1556,7 @@ var META={
 };
 var insp=$('#inspector'),inspBody=$('#insp-body'),inspOpen=null;
 function openInspector(id){
+  if(id==='brain'){ switchView('memory'); toast('Your session memory — the brain','brain'); return; }
   var m=META[id],def=WORLD.items[id]&&WORLD.items[id].def; if(!def)return; if(!m)m={ic:def.ico,color:'accent',rows:[],log:[]};
   $$('.card.selected').forEach(function(c){c.classList.remove('selected')});
   var card=$('.card',WORLD.items[id].el); if(card)card.classList.add('selected');
@@ -1581,9 +1614,12 @@ function fmtTok(n){ return n>=1000?(n/1000).toFixed(1)+'k':(''+n); }
 function updateMeters(){
   $('#rc-tok').textContent=fmtTok(RUN.tok); $('#rc-cost').textContent='$'+RUN.cost.toFixed(2); $('#rc-time').textContent=Math.floor(RUN.el)+'s';
   $('#stat-cost').textContent='$'+RUN.cost.toFixed(2); $('#stat-costbar').style.width=Math.min(100,(RUN.cost/2)*100)+'%';
+  var cp=$('#chrome-prog'); if(cp&&RUN.agents){var a=RUN.agents; cp.style.width=Math.min(100,(a.review.p+a.revamp.p+a.migrate.p)/3)+'%';}
 }
 function setRunBtn(on){ var b=$('#run-btn'); b.classList.toggle('running',on); b.querySelector('.rl').textContent=on?'Running':'Run'; b.querySelector('[data-ic]')?null:null; b.firstElementChild.innerHTML=ic(on?'pause':'play'); }
-function setLive(state){ var m={idle:'idle',running:'running',done:'done ✓',paused:'paused'}; $('#stat-live').textContent=m[state]||state; $('#ct-dot').className='sd '+(state==='running'?'run':(state==='done'?'ok':'idle')); }
+function setLive(state){ var m={idle:'idle',running:'running',done:'done ✓',paused:'paused'}; var sl=$('#stat-live'); if(sl)sl.textContent=m[state]||state; var cd=$('#ct-dot'); if(cd)cd.className='sd '+(state==='running'?'run':(state==='done'?'ok':'idle'));
+  var ps=$('#proj-status'),pt=$('#proj-status-t'); if(ps&&pt){ ps.className='proj-status '+(state==='running'?'run':(state==='done'?'ok':'idle')); pt.textContent={idle:'Idle',running:'Running',done:'Done',paused:'Paused'}[state]||state; }
+  var cp=$('#chrome-prog'); if(cp){ if(state==='idle')cp.style.width='0%'; else if(state==='done')cp.style.width='100%'; } }
 function streamLine(id){ var pool=POOL[id]||POOL.generic; var l=pool[Math.floor(Math.random()*pool.length)]; cline(l[0],'  '+labelOf(id)+' '+l[1]); }
 function run(){
   if(RUN.active){ toast('Run already in progress','play'); return; }
@@ -1664,17 +1700,17 @@ var WF={
  'auth-refactor':{ct:'Auth refactor',path:'auth-refactor',nodes:{review:['Review','security check'],revamp:['Refactor','apply changes'],migrate:['Migrate','DB + tokens']}}
 };
 var ACTIVE='website-migration';
-function buildSessions(){ $('#sesslist').innerHTML=SESSIONS.map(function(s){ return '<div class="sess'+(s.slug===ACTIVE?' on':'')+'" data-slug="'+s.slug+'" tabindex="0" role="button"><span class="sd '+s.dot+'"></span><div class="sbody"><div class="st">'+s.name+'</div><div class="ss">'+s.sub+'</div></div></div>'; }).join('');
-  $$('#sesslist .sess').forEach(function(el){ el.addEventListener('click',function(){ selectSession(el.dataset.slug); }); el.addEventListener('keydown',function(e){ if(e.key==='Enter'){selectSession(el.dataset.slug);} }); });
+function buildSessions(){ var m=$('#proj-menu'); if(!m)return; m.innerHTML=SESSIONS.map(function(s){ return '<button type="button" class="'+(s.slug===ACTIVE?'on':'')+'" data-slug="'+s.slug+'"><span class="sd '+s.dot+'"></span><div class="pm-b"><div class="pm-t">'+s.name+'</div><div class="pm-s">'+s.sub+'</div></div></button>'; }).join('');
+  $$('#proj-menu button').forEach(function(el){ el.addEventListener('click',function(){ selectSession(el.dataset.slug); m.classList.remove('open'); }); });
 }
 function selectSession(slug){ var s=null; SESSIONS.forEach(function(x){if(x.slug===slug)s=x;}); if(!s)return;
-  $$('#sesslist .sess').forEach(function(el){ el.classList.toggle('on',el.dataset.slug===slug); });
+  $$('#proj-menu button').forEach(function(el){ el.classList.toggle('on',el.dataset.slug===slug); });
   if(s.view){ switchView(s.view); toast('Opened '+s.name,'inbox'); return; }
-  ACTIVE=slug; applyWorkflow(slug); switchView('canvas');
+  ACTIVE=slug; var pn=$('#proj-name'); if(pn)pn.textContent=s.name; applyWorkflow(slug); switchView('canvas');
 }
 function updateNodeLabel(id,t,sub){ var it=WORLD.items[id]; if(!it)return; var ttl=$('.n-ttl',it.el),ss=$('.n-sub',it.el); if(ttl)ttl.textContent=t; if(ss)ss.textContent=sub; it.def.title=t; it.def.sub=sub; }
 function applyWorkflow(slug){ var w=WF[slug]; if(!w)return; Object.keys(w.nodes).forEach(function(id){ updateNodeLabel(id,w.nodes[id][0],w.nodes[id][1]); });
-  $('#cmd-path').textContent='· '+w.path; $('#ct-name').textContent=w.ct; $('#stat-sess').textContent=w.path;
+  var pn=$('#proj-name'); if(pn)pn.textContent=w.ct; var ct=$('#ct-name'); if(ct)ct.textContent=w.ct; var ss=$('#stat-sess'); if(ss)ss.textContent=w.path;
   ['review','revamp','migrate','orch'].forEach(function(id){WORLD.setState(id,'idle'); if(id!=='orch')WORLD.setProg(id,0);}); setLive('idle'); WORLD.pulseOrch(false);
 }
 
@@ -1822,9 +1858,15 @@ function wireApp(){
   $('#tb-add').addEventListener('click',addNode); $('#tb-fit').addEventListener('click',function(){WORLD.reset()}); $('#tb-console').addEventListener('click',function(){ rc.classList.contains('open')?closeConsole():openConsole(); });
   $('#rc-close').addEventListener('click',closeConsole);
   $('#insp-close').addEventListener('click',closeInspector);
-  $('#rail-toggle').addEventListener('click',function(){ app.classList.toggle('rail-collapsed'); });
   $('#app-exit').addEventListener('click',exitApp);
-  $('#sess-add').addEventListener('click',function(){ toast('New session — pick a template','plus'); });
+  $('#tb-settings').addEventListener('click',function(){ switchView('settings'); });
+  $('#tb-fleet').addEventListener('click',function(){ switchView('fleet'); });
+  $('#tb-inbox').addEventListener('click',function(){ switchView('inbox'); });
+  $('#tb-edits').addEventListener('click',function(){ toast('Quick edits — inline tweaks to any node','edit'); });
+  $('#tb-voice').addEventListener('click',openVoice);
+  $('#tb-cmd').addEventListener('click',openPalette);
+  var pjb=$('#proj-btn'),pjm=$('#proj-menu');
+  if(pjb){ pjb.addEventListener('click',function(e){ e.stopPropagation(); pjm.classList.toggle('open'); }); document.addEventListener('click',function(e){ if(!e.target.closest('.proj-drop'))pjm.classList.remove('open'); }); }
   $('#voice-fab').addEventListener('click',openVoice); $('#voice-close').addEventListener('click',closeVoice);
   $('#modal-close').addEventListener('click',closeModal); $('#modal').addEventListener('click',function(e){ if(e.target===this)closeModal(); });
   // rail nav
@@ -1846,8 +1888,7 @@ function wireApp(){
   $('#pal-input').addEventListener('input',function(){ filterPalette(this.value); });
   $('#pal-input').addEventListener('keydown',function(e){ if(e.key==='ArrowDown'){e.preventDefault(); palIdx=Math.min(palFiltered.length-1,palIdx+1); renderPalette();} else if(e.key==='ArrowUp'){e.preventDefault(); palIdx=Math.max(0,palIdx-1); renderPalette();} else if(e.key==='Enter'){e.preventDefault(); runPalette(palIdx);} });
   $('#palette').addEventListener('click',function(e){ if(e.target===this)closePalette(); });
-  $('#cmdbar').addEventListener('click',openPalette); $('#cmdbar').setAttribute('tabindex','0'); $('#cmdbar').setAttribute('role','button');
-  $('#cmdbar').addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault(); openPalette();} });
+  // command palette opens via ⌘K and the topbar ⌘K button
   // keyboard reachability for div-based controls
   function kbd(el,fn){ el.setAttribute('tabindex','0'); el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault(); (fn||function(){el.click()})(); } }); }
   $$('.rn').forEach(function(el){ el.setAttribute('role','button'); kbd(el); });
@@ -1880,7 +1921,6 @@ document.addEventListener('keydown',function(e){
 function initApp(){
   setMark('chromemk',CMK); setMark('cmdmk',CMK);
   WORLD.build();
-  $('#avatars').innerHTML=['claude','openai','gemini'].map(function(a){return '<span class="av">'+ic(a)+'</span>'}).join('')+'<span class="av"><span style="font-family:var(--mono);font-size:.58rem;color:var(--muted)">+2</span></span>';
   buildSessions(); hydrateIcons(app);
   var vp=$('#viewport'); if(vp)vp.scrollTop=0;
   wireApp(); setLive('idle');
