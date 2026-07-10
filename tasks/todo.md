@@ -1,0 +1,55 @@
+# Conductor landing — v2 build plan
+
+Goal: the hero **is** the product UI, faithful to Stephane's sketch, interactive.
+Positioning: **100% open source** (MIT assumed), self-hostable, BYO Claude key. No paid tiers.
+
+## Decisions (from Stephane, 2026-07-10)
+- Name **Conductor** · light editorial · full homepage.
+- Hero = interactive, super-detailed reproduction of the sketch UI. Every element visible.
+- Logos live **in the hero** (Tools node + connect bar), not only a separate wall.
+- Reports = **many types, filterable** (daily/weekly/cost/quarterly/benchmarks/newspaper feed).
+- Features = "5 things nobody ships" shown with richer per-feature mini-UIs.
+- Fully open source → replace pricing with an OSS/self-host section.
+- Assumptions: MIT license; no fabricated star/user counts.
+
+## Sketch inventory → must appear in hero
+- [ ] Browser / Desktop app frame toggle
+- [ ] Command bar: "Agentic build · Website migration" + ✎ Quickedits
+- [ ] Brain (context · memory) node
+- [ ] Orchestrator (Claude ✳) node w/ open · stop · pause + record dot + live cost
+- [ ] Tools · Connector · Skills · Prompts node = real logo cluster + "+"
+- [ ] Beaded-chain edges (dots), with PR labels ON the edges (PR185 / PR186 / v local · GRO-865)
+- [ ] Fan-out → Review (Round 1-2-3-4-5-6), Revamp, Migrate (⚠ + fork child v2)
+- [ ] Converge → Report node (Claude ✳, eta 10:00 AM)
+- [ ] Node-type legend rail: link · document · flag · fork
+- [ ] "+" add-node affordance w/ dashed lineage (fork)
+- [ ] Consumption / summary / timeline → done&verified / QA / tracking / what's next
+
+## Build tasks
+1. [ ] Canvas engine: user-unit coord system (1240×760), locked aspect → round beads.
+2. [ ] Draggable nodes (pointer events), edges + labels recompute live, clamp in-bounds.
+3. [ ] Beaded edges w/ flow animation on hot edges; dashed lineage for fork.
+4. [ ] Chrome bar (browser/desktop toggle, command+pencil, connect+logo avatars, live).
+5. [ ] Legend rail + drag hint.
+6. [ ] Scroll-reveal draw-in (fade+pop, staggered) on first view; drag after.
+7. [ ] Features bento with mini-UIs (triage list, cost meter, preview frame, memory graph, gate).
+8. [ ] Reports: pill filter tabs + 6 distinct panels (JS switch), incl. newspaper masthead + cost bars.
+9. [ ] Open-source section: self-host terminal snippet, BYO key, MIT badge, star/clone CTAs, contribute.
+10. [ ] Slim logo marquee under hero ("works with your stack").
+11. [ ] OSS nav/CTAs; drop paid tiers.
+12. [ ] Keep both themes + reduced-motion + mobile stack fallback for canvas.
+
+## v3 (2026-07-10) — from Stephane's 2nd sketch pass + ALEPH mining
+- [ ] Canvas: add **Prompt + Dataroom** node (user prompt + attached files) as first step → Brain → Orchestrator.
+- [ ] Nodes = **sessions with quick actions**: hover reveals open / fork / flag / rerun toolbar on each.
+- [ ] Tools node shows **Skills · MCPs · Prompts · Connectors** explicitly (not a generic chip).
+- [ ] Improve Report node (consumption·summary·timeline → done&verified·QA·tracking·what's-next) + Review node (rounds + files + comments).
+- [ ] Features → a **wall** (16, not 5): 4 featured w/ mini-UIs + 12 compact.
+- [ ] Reports enriched from ALEPH: add **Inbox triage** (urgent/needs-reply/fyi/noise + pre-drafted) + **Fleet heartbeat** (services/agents live·idle·down + metrics strip). Keep daily/weekly/cost/quarterly/benchmarks/front-page.
+- ALEPH source: ~/Documents/Code/aleph (yalla-brief, inbox-operator, daily-recap, usage meter, atlas home canvas of sessions).
+
+## Verify — v2 PASSED (browser QA, 2026-07-10)
+- [x] 0 console errors; 8 nodes + 9 edges with computed paths + 3 labels + logos render
+- [x] reveal fires (stage.drawn, node.pop); report tabs switch (cost/feed panels toggle)
+- [x] newspaper front page renders; dark mode holds (canvas + masthead); mobile stack fallback; no h-overflow
+- [ ] drag: engine wired + clamped, not exercised headlessly (pointer sim) — verify by hand in browser
