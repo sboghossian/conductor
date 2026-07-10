@@ -11,8 +11,17 @@ Spine: the landing is the trailer; "Get Started — it's free" BOOTS the real pl
 - [x] Voice orb (particle canvas) listening/thinking/speaking + captions; hoisted to app-level (works from any view). Theme toggle. Reduced-motion + dark + mobile (no h-overflow).
 - [x] Charset fix (UTF-8 meta) — killed mojibake. Icon hydration made document-wide.
 - [x] Browser QA: 0 console errors across full session; run engine, all views, session-swap, modal, palette, voice, dark, mobile all verified.
-- [ ] GAUNTLET (code-reviewer + ux-designer sub-agents) → apply fixes → re-verify → ship to Pages → verify live.
-- [ ] Update project_conductor memory to v7.
+- [x] GAUNTLET (code-reviewer + ux-designer sub-agents, 16 findings) → applied 16 fixes → re-verified in browser (0 errors) → committed a1d515b → pushed → **Pages LIVE v7 (HTTP 200, markers confirmed)** → artifact redeployed same URL.
+- [x] Updated project_conductor memory to v7.
+
+## v7.1 — DEEP ALEPH PORT (2026-07-10) — "more deeper to alef, go crazy"
+- [x] Mined the real ALEPH project (~/Documents/Code/aleph) via Explore agent → full buildable brief.
+- [x] Rebuilt voice orb → **ALEPH console** (dark cinematic own-world overlay): fibonacci-sphere breathing brain (900 particles, additive+trail, eased state hues 205/150/265/28) + **constellation** (model-colored satellites per live agent, status pulse) + butler-persona **transcript** (streaming bubbles) + **real TTS** (Web Speech API, graceful fallback).
+- [x] **Command grammar** drives the real app (run/pause/stop/views/report/fork/rerun/add/theme/brief/fleet/triage) + fallback.
+- [x] **Propose→approve→act plan panel** (LeCun gate): "migrate the site" → 5 risk-badged steps → approve → executes real run engine, steps light up.
+- [x] **Capability tray** (9/14 connected meter + Live-now/Connect-more) + quick chips + mute + push-to-talk.
+- [x] Browser-QA'd: orb, greeting, plan propose+approve+run, caps, constellation reflects run — **0 console errors**, closes clean.
+- [ ] SHIP v7.1 → Pages → verify live. `/portfolio` still HELD for Stephane's explicit go.
 
 ---
 # Conductor landing — v2 build plan

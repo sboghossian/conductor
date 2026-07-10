@@ -772,8 +772,68 @@ h1.hero-h .fade{color:var(--muted)}
 .pal-item .pk{margin-left:auto; font-family:var(--mono); font-size:.6rem; color:var(--muted); border:1px solid var(--line-strong); border-radius:5px; padding:1px 7px}
 .pal-empty{padding:26px; text-align:center; color:var(--muted); font-family:var(--mono); font-size:.8rem}
 
+/* ===== ALEPH console — deliberately its own dark, cinematic world ===== */
+.voice-overlay.aleph{background:radial-gradient(130% 100% at 50% -10%, #10131f 0%, #06070c 68%); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px); color:#eef0f6; display:none; flex-direction:column; gap:0; padding:0; align-items:stretch; justify-content:flex-start}
+.voice-overlay.aleph.open{display:flex}
+.al-top{display:flex; align-items:center; gap:12px; padding:15px 20px; flex:none}
+.al-mark{font-weight:700; font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; display:flex; align-items:center; gap:9px}
+.al-mark .gl{color:#8b76ff; font-size:1rem}
+.al-sub{font-family:var(--mono); font-size:.64rem; color:#8b93a7}
+.al-tools{margin-left:auto; display:flex; gap:8px}
+.al-tools button{width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(20,23,34,.6);color:#c7ccda;display:grid;place-items:center}
+.al-tools button:hover{border-color:rgba(139,118,255,.5);color:#fff}
+.al-tools button svg{width:15px;height:15px}
+.al-stage{flex:1; display:grid; grid-template-columns:288px 1fr 288px; min-height:0}
+@media(max-width:920px){.al-stage{grid-template-columns:1fr} .al-transcript,.al-side{display:none}}
+.al-transcript{overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:9px; border-right:1px solid rgba(255,255,255,.06)}
+.al-b{max-width:94%; font-size:.85rem; line-height:1.5; padding:9px 12px; border-radius:13px}
+.al-b.user{align-self:flex-end; background:rgba(139,118,255,.16); color:#e7e3ff; border:1px solid rgba(139,118,255,.28)}
+.al-b.aleph{align-self:flex-start; background:rgba(255,255,255,.05); color:#eef0f6; border:1px solid rgba(255,255,255,.08)}
+.al-b.sys{align-self:center; font-family:var(--mono); font-size:.63rem; color:#8b93a7; background:none; border:none; padding:1px}
+.al-orb-wrap{position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; min-height:0; padding:10px}
+.voice-overlay.aleph .voice-orb{width:min(46vh,440px); height:min(46vh,440px); max-width:100%}
+.voice-overlay.aleph .voice-state{color:#b9a7ff; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase}
+.al-cap{font-size:1.05rem; color:#eef0f6; max-width:440px; text-align:center; min-height:1.4em; font-weight:500; line-height:1.4}
+.al-side{overflow-y:auto; padding:16px; border-left:1px solid rgba(255,255,255,.06)}
+.al-side:empty{border-left:none}
+.al-panel{background:rgba(20,23,34,.55); border:1px solid rgba(255,255,255,.09); border-radius:14px; padding:15px}
+.al-panel h4{font-size:.84rem; letter-spacing:-.01em}
+.al-panel .psub{font-family:var(--mono); font-size:.6rem; color:#8b93a7; margin:3px 0 12px}
+.al-step{display:flex; align-items:flex-start; gap:10px; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.06)}
+.al-step:last-child{border-bottom:none}
+.al-step .dot{width:9px;height:9px;border-radius:50%;margin-top:4px;flex:none;background:#3a3f52; transition:background .3s}
+.al-step.running .dot{background:#ffc98a; animation:alpulse 1.2s infinite}
+.al-step.done .dot{background:#7ee0a8} .al-step.failed .dot{background:#e87e7e}
+@keyframes alpulse{0%{box-shadow:0 0 0 0 rgba(255,201,138,.5)}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.al-step .sn{font-size:.82rem;color:#dfe2ec} .al-step .sd{font-family:var(--mono);font-size:.6rem;color:#8b93a7;margin-top:1px}
+.al-step .risk{margin-left:auto;font-family:var(--mono);font-size:.54rem;padding:2px 6px;border-radius:100px;background:rgba(255,201,138,.16);color:#ffc98a;flex:none}
+.al-step .risk.low{background:rgba(126,224,168,.14);color:#7ee0a8}
+.al-gate{display:flex; gap:8px; margin-top:13px; flex-wrap:wrap}
+.al-gate button{flex:1; min-width:78px; font-size:.73rem; padding:9px; border-radius:9px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:#dfe2ec}
+.al-gate button:hover{border-color:rgba(255,255,255,.24)}
+.al-gate button.go{background:#8b76ff; border-color:#8b76ff; color:#fff}
+.al-gate button.go:hover{background:#7a64f0}
+.al-meter{height:8px;border-radius:100px;background:rgba(255,255,255,.08);overflow:hidden;margin:10px 0 4px}
+.al-meter i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,#9a87ff,#7a64f0); transition:width .6s}
+.al-cap-row{display:flex;align-items:center;gap:9px;padding:8px 0;font-size:.8rem}
+.al-cap-row .cd{width:7px;height:7px;border-radius:50%;flex:none}
+.al-cap-row.live .cd{background:#7ee0a8; box-shadow:0 0 8px rgba(126,224,168,.6)} .al-cap-row.off .cd{background:#3a3f52}
+.al-cap-row .ct{color:#dfe2ec} .al-cap-row.off .ct{color:#8b93a7}
+.al-cap-row .stp{margin-left:auto;font-family:var(--mono);font-size:.56rem;color:#8b93a7}
+.al-lbl{font-family:var(--mono);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:#8b93a7;margin:14px 0 2px}
+.al-dock{padding:12px 16px 18px; border-top:1px solid rgba(255,255,255,.06); display:flex; flex-direction:column; gap:11px; flex:none}
+.al-chips{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
+.al-chip{font-family:var(--mono); font-size:.68rem; padding:7px 12px; border-radius:100px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:#c7ccda}
+.al-chip:hover{border-color:rgba(139,118,255,.5); color:#fff; background:rgba(139,118,255,.14)}
+.al-input{display:flex; align-items:center; gap:9px; max-width:660px; width:100%; margin:0 auto; background:rgba(20,23,34,.65); border:1px solid rgba(255,255,255,.12); border-radius:13px; padding:7px 7px 7px 15px}
+.al-input input{flex:1; background:none; border:none; outline:none; color:#eef0f6; font-size:.92rem; font-family:var(--sans)}
+.al-input input::placeholder{color:#6b7183}
+.al-input button{width:38px;height:38px;border-radius:10px;border:none;display:grid;place-items:center;flex:none}
+.al-input .mic{background:rgba(255,255,255,.06);color:#c7ccda} .al-input .mic.on{background:#7ee0a8;color:#06070c}
+.al-input .send{background:#8b76ff;color:#fff} .al-input .send:hover{background:#7a64f0}
+.al-input button svg{width:17px;height:17px}
 @media(max-width:1000px){.inspector{width:310px} .rail{width:200px}}
-@media(max-width:680px){.app-chrome .cmd{display:none} .voice-fab{bottom:70px}}
+@media(max-width:680px){.app-chrome .cmd{display:none} .voice-fab{bottom:70px} .voice-overlay.aleph .voice-orb{width:min(40vh,320px);height:min(40vh,320px)}}
 </style>
 <!-- ============================== APP ============================== -->
 <div class="app" id="app" aria-hidden="true">
@@ -967,12 +1027,32 @@ h1.hero-h .fade{color:var(--muted)}
   </div>
 
   <button type="button" class="voice-fab" id="voice-fab" aria-label="Talk to ALEPH"><span data-ic="mic"></span></button>
-  <div class="voice-overlay" id="voice-overlay" role="dialog" aria-modal="true" aria-label="Voice assistant">
-    <button type="button" class="voice-close" id="voice-close" aria-label="Close"><span data-ic="x"></span></button>
-    <canvas class="voice-orb" id="voice-orb" width="420" height="420"></canvas>
-    <div class="voice-state" id="voice-state">Listening</div>
-    <div class="voice-cap" id="voice-cap">Hey ALEPH…</div>
-    <div class="voice-hint">Ask it to run a workflow, open a report, or fork a session.</div>
+  <div class="voice-overlay aleph" id="voice-overlay" role="dialog" aria-modal="true" aria-label="ALEPH voice console">
+    <div class="al-top">
+      <span class="al-mark"><span class="gl">🜂</span> ALEPH</span>
+      <span class="al-sub">voice-first · your conductor</span>
+      <div class="al-tools">
+        <button type="button" id="al-mute" aria-label="Mute voice" title="Mute voice"><span data-ic="sound"></span></button>
+        <button type="button" id="voice-close" aria-label="Close"><span data-ic="x"></span></button>
+      </div>
+    </div>
+    <div class="al-stage">
+      <div class="al-transcript" id="al-transcript"></div>
+      <div class="al-orb-wrap">
+        <canvas class="voice-orb" id="voice-orb" width="480" height="480"></canvas>
+        <div class="voice-state" id="voice-state">Listening</div>
+        <div class="al-cap" id="voice-cap">Hey ALEPH…</div>
+      </div>
+      <div class="al-side" id="al-side"></div>
+    </div>
+    <div class="al-dock">
+      <div class="al-chips" id="al-chips"></div>
+      <div class="al-input">
+        <button type="button" class="mic" id="al-mic" aria-label="Push to talk" title="Hold to talk"><span data-ic="mic"></span></button>
+        <input id="al-text" placeholder="Ask ALEPH to run a flow, triage the inbox, migrate the site…" aria-label="Ask ALEPH">
+        <button type="button" class="send" id="al-send" aria-label="Send"><span data-ic="send"></span></button>
+      </div>
+    </div>
   </div>
 
   <div class="app-status">
@@ -1054,6 +1134,9 @@ var IC={
   chevL:S+'<path d="M14.5 5l-7 7 7 7"/></svg>',
   chevD:S+'<path d="M5 9.5l7 7 7-7"/></svg>',
   mic:S+'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21M8.5 21h7"/></svg>',
+  send:S+'<path d="M4.5 12 20 4.5 15.5 20l-3.5-6z"/><path d="M12 14 20 4.5"/></svg>',
+  sound:S+'<path d="M4 9.5h3l4-3.5v12l-4-3.5H4z"/><path d="M15 9a3.5 3.5 0 010 6M17.5 6.5a7 7 0 010 11"/></svg>',
+  mute:S+'<path d="M4 9.5h3l4-3.5v12l-4-3.5H4z"/><path d="M16 9.5l4 5M20 9.5l-4 5"/></svg>',
   refresh:S+'<path d="M20 11a8 8 0 10-.6 4M20 5v6h-6"/></svg>',
   search:S+'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>',
   bolt:S+'<path d="M13 3 5 13h5l-1 8 8-10h-5z" fill="currentColor" stroke="none"/></svg>',
@@ -1472,25 +1555,96 @@ function applyWorkflow(slug){ var w=WF[slug]; if(!w)return; Object.keys(w.nodes)
 /* ---------- view switch ---------- */
 function switchView(v){ $$('.view').forEach(function(el){ el.classList.toggle('on',el.dataset.view===v); }); $$('.rn').forEach(function(el){ el.classList.toggle('on',el.dataset.view===v); }); if(v!=='canvas')closeInspector(); }
 
-/* ---------- voice orb ---------- */
-var voiceRAF=null,voiceT0=0,voiceState=0,voiceIv=null;
-var VSTATES=[['Listening','Hey ALEPH…'],['Thinking','Finding the migration session…'],['Speaking','Migration is at round 4 of 6, on budget. Want me to run it?'],['Listening','…']];
-function drawOrb(ts){ var c=$('#voice-orb'),x=c.getContext('2d'),w=c.width,h=c.height,cx=w/2,cy=h/2; x.clearRect(0,0,w,h);
-  var t=(ts-voiceT0)/1000; var base=voiceState===0?70:voiceState===1?60:82; var amp=voiceState===2?26:voiceState===1?10:16;
-  var col=voiceState===1?'124,92,252':'217,91,59';
-  for(var ring=0;ring<3;ring++){ x.beginPath(); for(var i=0;i<=80;i++){ var a=(i/80)*Math.PI*2; var r=base+ring*22+Math.sin(a*(4+ring)+t*(2+ring))*amp*(1-ring*0.2); var px=cx+Math.cos(a)*r, py=cy+Math.sin(a)*r; if(i===0)x.moveTo(px,py); else x.lineTo(px,py);} x.closePath(); x.strokeStyle='rgba('+col+','+(0.5-ring*0.14)+')'; x.lineWidth=2.4-ring*0.5; x.stroke(); }
-  x.beginPath(); x.arc(cx,cy,base*0.5+Math.sin(t*3)*4,0,Math.PI*2); var grd=x.createRadialGradient(cx,cy,4,cx,cy,base*0.6); grd.addColorStop(0,'rgba('+col+',.9)'); grd.addColorStop(1,'rgba('+col+',.15)'); x.fillStyle=grd; x.fill();
-  voiceRAF=requestAnimationFrame(drawOrb);
+/* ---------- ALEPH voice console (deep port of the ALEPH project) ---------- */
+var AL={raf:null,cur:{hue:205,sat:.55,spin:.0016,jit:.6,base:.92,glow:.16,push:.10},level:0,state:'idle',muted:false,busy:false,spk:0,greeted:false,inited:false};
+var AL_S={ idle:{hue:205,sat:.55,spin:.0016,jit:.6,base:.92,glow:.16,push:.10}, listening:{hue:150,sat:.7,spin:.004,jit:1.0,base:.98,glow:.26,push:.20}, thinking:{hue:265,sat:.8,spin:.009,jit:2.6,base:.9,glow:.34,push:.16}, speaking:{hue:28,sat:.85,spin:.006,jit:1.6,base:1.02,glow:.46,push:.30} };
+var AL_PTS=null;
+function alSphere(){ var n=window.innerWidth<760?520:900,pts=new Array(n),off=2/n,inc=Math.PI*(3-Math.sqrt(5)); for(var i=0;i<n;i++){ var y=i*off-1+off/2,r=Math.sqrt(Math.max(0,1-y*y)),phi=i*inc; pts[i]={x:Math.cos(phi)*r,y:y,z:Math.sin(phi)*r,s:Math.random()}; } AL_PTS=pts; }
+function modelHue(m){ return m==='claude-opus'?265:m==='claude-sonnet'?205:m==='gpt'?28:m==='gemini'?210:150; }
+function alSats(){ var a=[['review','claude-opus'],['revamp','claude-sonnet'],['migrate','claude-opus']]; return a.map(function(x,i){ return {i:i,n:a.length,hue:modelHue(x[1]),st:(WORLD.state[x[0]]||'idle')}; }); }
+function alDraw(ts){ var c=$('#voice-orb'); if(!c){AL.raf=null;return;} var x=c.getContext('2d'),w=c.width,h=c.height,cx=w/2,cy=h/2,t=ts/1000;
+  var tg=AL_S[AL.state]; for(var k in tg){ AL.cur[k]+=(tg[k]-AL.cur[k])*0.06; }
+  var lt=AL.state==='speaking'?(0.5+0.5*Math.abs(Math.sin(t*11))):AL.state==='listening'?(0.2+0.14*Math.sin(t*4)):AL.state==='thinking'?0.24:0.06; AL.level+=(lt-AL.level)*0.12;
+  x.globalCompositeOperation='source-over'; x.fillStyle='rgba(6,7,12,0.30)'; x.fillRect(0,0,w,h);
+  var R=Math.min(w,h)*0.28*AL.cur.base, spin=t*(AL.cur.spin*260), hue=Math.round(AL.cur.hue), sat=Math.round(AL.cur.sat*100);
+  x.globalCompositeOperation='lighter';
+  var g=x.createRadialGradient(cx,cy,2,cx,cy,R*1.1); g.addColorStop(0,'hsla('+hue+','+sat+'%,70%,'+AL.cur.glow.toFixed(2)+')'); g.addColorStop(1,'hsla('+hue+','+sat+'%,50%,0)'); x.fillStyle=g; x.beginPath(); x.arc(cx,cy,R*1.1,0,Math.PI*2); x.fill();
+  alSats().forEach(function(s){ var ang=(s.i/s.n)*Math.PI*2 + t*0.35*(AL.state==='thinking'?2.2:1), sr=R*1.62, sx=cx+Math.cos(ang)*sr, sy=cy+Math.sin(ang)*sr*0.62;
+    var isHsl=(s.st==='idle'), col=s.st==='running'?'255,201,138':s.st==='done'?'126,224,168':s.st==='queued'?'123,147,255':('hsl('+s.hue+',70%,66%)');
+    x.strokeStyle='rgba(255,255,255,0.07)'; x.lineWidth=1; x.beginPath(); x.moveTo(cx,cy); x.lineTo(sx,sy); x.stroke();
+    var pr=s.st==='running'?(5+2*Math.abs(Math.sin(t*6))):4;
+    x.beginPath(); x.arc(sx,sy,pr,0,Math.PI*2); x.fillStyle=isHsl?col:('rgba('+col+',0.95)'); x.fill();
+    x.beginPath(); x.arc(sx,sy,pr+5,0,Math.PI*2); x.fillStyle=isHsl?('hsla('+s.hue+',70%,66%,0.16)'):('rgba('+col+',0.16)'); x.fill();
+  });
+  if(!AL_PTS)alSphere(); var sp=Math.sin(spin),cp=Math.cos(spin);
+  for(var i=0;i<AL_PTS.length;i++){ var p=AL_PTS[i], xr=p.x*cp-p.z*sp, zr=p.x*sp+p.z*cp, yr=p.y, depth=(zr+1)/2;
+    var push=1+AL.level*AL.cur.push+Math.sin(t*2+p.s*10)*0.012*AL.cur.jit, rr=R*push, px=cx+xr*rr, py=cy+yr*rr;
+    x.fillStyle='hsla('+hue+','+sat+'%,'+(55+depth*25|0)+'%,'+(0.14+depth*0.6).toFixed(2)+')'; var sz=0.6+depth*1.6; x.fillRect(px,py,sz,sz);
+  }
+  AL.raf=requestAnimationFrame(alDraw);
 }
-function openVoice(){ var o=$('#voice-overlay'); if(o.classList.contains('open'))return; o.classList.add('open'); o.setAttribute('aria-hidden','false'); voiceState=0; setVoiceCap(); voiceT0=performance.now();
-  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  if(reduce){ var c=$('#voice-orb'),x=c.getContext('2d'); x.clearRect(0,0,c.width,c.height); x.beginPath(); x.arc(c.width/2,c.height/2,80,0,Math.PI*2); x.fillStyle='rgba(217,91,59,.5)'; x.fill(); }
-  else { voiceRAF=requestAnimationFrame(drawOrb); }
-  voiceIv=setInterval(function(){ voiceState=(voiceState+1)%VSTATES.length; setVoiceCap(); },2600);
+function setAlephState(s){ AL.state=s; var el=$('#voice-state'); if(el)el.textContent=s.charAt(0).toUpperCase()+s.slice(1)+'…'; }
+function alBubble(who,text){ var b=document.createElement('div'); b.className='al-b '+who; b.textContent=text||''; var tr=$('#al-transcript'); tr.appendChild(b); tr.scrollTop=tr.scrollHeight; return b; }
+function alStream(el,text){ var wds=text.split(' '),i=0,iv=setInterval(function(){ el.textContent=wds.slice(0,++i).join(' '); var tr=$('#al-transcript'); tr.scrollTop=tr.scrollHeight; if(i>=wds.length)clearInterval(iv); },42); }
+var AL_VOICE=null;
+function alPickVoice(){ if(!('speechSynthesis'in window))return; var vs=window.speechSynthesis.getVoices(); if(!vs.length)return; var pref=['Daniel','Arthur','Google UK English Male','Oliver','Serena']; for(var i=0;i<pref.length;i++){ var m=vs.filter(function(v){return v.name.indexOf(pref[i])>=0;})[0]; if(m){AL_VOICE=m;return;} } AL_VOICE=vs.filter(function(v){return /en[-_]GB/i.test(v.lang);})[0]||vs.filter(function(v){return /^en/i.test(v.lang);})[0]||vs[0]; }
+function speak(text){ if(AL.muted||!('speechSynthesis'in window))return false; try{ window.speechSynthesis.cancel(); text.split(/(?<=[.!?])\s+/).forEach(function(s){ if(!s.trim())return; var u=new SpeechSynthesisUtterance(s); u.rate=1.03; u.pitch=.96; if(AL_VOICE)u.voice=AL_VOICE; u.onstart=function(){AL.spk++; setAlephState('speaking');}; u.onend=function(){AL.spk--; if(AL.spk<=0){AL.spk=0; setAlephState('listening');}}; window.speechSynthesis.speak(u); }); return true; }catch(e){ return false; } }
+function alephSay(text,after){ setAlephState('thinking'); AL.busy=true; var el=alBubble('aleph',''); setTimeout(function(){ var spoke=speak(text); if(!spoke)setAlephState('speaking'); alStream(el,text); $('#voice-cap').textContent=text.length>92?text.slice(0,90)+'…':text; setTimeout(function(){ AL.busy=false; if(!spoke)setAlephState('listening'); if(after)after(); }, Math.min(4600,600+text.length*30)); },460); }
+function alephUser(text){ alBubble('user',text); }
+function fleetLine(){ return "Three agents in your fleet, sir. The migration's running, blog batch too, and the SEO pass is queued. Fourteen shipped today, all verified."; }
+var AL_I=[
+ {re:/\b(hi|hey|hello|yo|good (morning|evening))\b/, r:function(){return "At your service, Stephane. The migration's live and two agents are working. What shall we do?";}},
+ {re:/\b(who are you|what are you|your name)\b/, r:function(){return "I'm ALEPH — your conductor. I watch the fleet, run the flows, and never fire anything irreversible without your word.";}},
+ {re:/\b(migrate|rebuild|redesign|overhaul|plan|propose|how would you)\b/, plan:true},
+ {re:/\b(run|execute|ship it|launch|go ahead|start the)\b/, a:function(){run();}, r:function(){return "Running the "+ACTIVE.replace(/-/g,' ')+" flow now, sir. Three agents dispatched — I'll converge them into a report.";}},
+ {re:/\b(pause|hold on|wait)\b/, a:function(){pauseRun();}, r:function(){return RUN.paused?"Paused, sir. Say the word to resume.":"Resumed.";}},
+ {re:/\b(stop|halt|abort|wa2ef|kill it)\b/, a:function(){stopRun();}, r:function(){return "Stopped, and nothing shipped — every step is reversible.";}},
+ {re:/\b(fleet|what.?s running|live agents|status|what.?s (going|happening))\b/, a:function(){switchView('fleet');}, r:fleetLine},
+ {re:/\b(inbox|triage|email|drafts?)\b/, a:function(){switchView('inbox');}, r:function(){return "Triaged seven items, sir. Two urgent — the build's failing and a database gate is waiting. Replies are drafted; I never send.";}},
+ {re:/\b(cost|spend|budget|how much)\b/, a:function(){openReport('cost');}, r:function(){return "Four dollars and twelve cents today, sir — thirty-eight percent under budget. Opus is most of it.";}},
+ {re:/\b(brief|morning|recap|yalla|stand.?up|catch me up)\b/, a:function(){openReport('daily');}, r:function(){return "Morning, Stephane. Three sessions shipped overnight, all verified. The migration's at round four of six, and one gate is waiting on you.";}},
+ {re:/\b(reports?)\b/, a:function(){switchView('reports');}, r:function(){return "The newsroom, sir — daily, cost, fleet and the rest, all filed by your fleet.";}},
+ {re:/\b(memory|brain|remember|knowledge|facts?)\b/, a:function(){switchView('memory');}, r:function(){return "Two hundred and fourteen facts, sir, typed and sourced. Ask and I'll recall.";}},
+ {re:/\b(canvas|graph|the flow|nodes)\b/, a:function(){switchView('canvas');}, r:function(){return "Back to the canvas, sir.";}},
+ {re:/\bfork\b/, a:function(){toast('Forked "Migrate" → v2','fork');}, r:function(){return "Forked the migrator into a v2 on a local model, sir — trying the edge-redirect strategy in parallel.";}},
+ {re:/\b(rerun|retry|run.*again|failed step)\b/, a:function(){runNode('review');}, r:function(){return "Re-queuing the review now, sir.";}},
+ {re:/\b(add|new|spawn).*(node|agent|session)\b/, a:function(){addNode();}, r:function(){return "Dropped a fresh agent on the canvas — drag it in when you're ready.";}},
+ {re:/\b(dark|light|theme)\b/, a:function(){toggleTheme();}, r:function(){return "Switched the workspace theme, sir.";}},
+ {re:/\b(what can you|capabilit|connect|what.?s connected|help)\b/, a:function(){showCapabilities();}, r:function(){return "I'm nine of fourteen connected, sir. Here's what's live — and what you can switch on.";}}
+];
+function alephCommand(text){ text=(text||'').trim(); if(!text)return; alephUser(text); $('#al-side').innerHTML=''; var t=text.toLowerCase();
+  for(var i=0;i<AL_I.length;i++){ var it=AL_I[i]; if(it.re.test(t)){ if(it.plan){ setTimeout(proposePlan,280); return; } if(it.a)it.a(); alephSay(it.r?it.r():"Done, sir."); return; } }
+  alephSay("A fair question, sir. In my full form I'd reason it through and act — here, try “run the flow”, “fleet status”, “triage the inbox”, or “what can you do”.");
+}
+function proposePlan(){ var steps=[['Ground on brief & dataroom','3 files · read-only','low'],['Apply the design system','revamp · Sonnet','low'],['Move 42 routes + redirects','migrate · Opus','med'],['Review & QA','reviewer · Opus','low'],['File the report','daily · 10:00','low']];
+  $('#al-side').innerHTML='<div class="al-panel"><h4>Proposed plan</h4><div class="psub">website migration · 3 agents · ~40s</div>'+steps.map(function(s){return '<div class="al-step"><span class="dot"></span><div><div class="sn">'+s[0]+'</div><div class="sd">'+s[1]+'</div></div><span class="risk '+(s[2]==='low'?'low':'')+'">'+s[2]+'</span></div>';}).join('')+'<div class="al-gate"><button type="button" id="al-cancel">Cancel</button><button type="button" id="al-stepwise">Step-by-step</button><button type="button" class="go" id="al-approve">Approve all</button></div></div>';
+  $('#al-approve').addEventListener('click',executePlan); $('#al-stepwise').addEventListener('click',executePlan);
+  $('#al-cancel').addEventListener('click',function(){ $('#al-side').innerHTML=''; alephSay("Stood down, sir."); });
+  alephSay("Here's my plan, sir: ground on your brief, apply the design system, move the routes, review and QA, then file the report. Three agents, about forty seconds. Shall I proceed?");
+}
+function executePlan(){ var els=$$('#al-side .al-step'),gate=$('#al-side .al-gate'); if(gate)gate.remove(); run(); alephSay("On it, sir."); var i=0;
+  (function step(){ if(i>0&&els[i-1])els[i-1].className='al-step done'; if(i<els.length){ els[i].className='al-step running'; i++; setTimeout(step,2100); } else { alephSay("Done, Stephane. The report's filed — one gate is waiting on your approval."); } })();
+}
+var AL_CAPS=[['Claude · Opus / Sonnet / Haiku',1,'key set'],['The canvas & run engine',1,'live'],['Memory · 214 facts',1,'auto-recall'],['Reports & fleet',1,'live'],['Voice · this console',1,'active'],['GitHub',1,'4 repos'],['Linear',1,'issues'],['Notion',1,'docs'],['Local · Ollama',1,'on device'],['Google Gemini',0,'add an API key'],['Slack',0,'connect a workspace'],['Figma',0,'link a file'],['WhatsApp send',0,'pair a number'],['Remote mesh · 2nd Mac',0,'install on the other Mac']];
+function showCapabilities(){ var live=AL_CAPS.filter(function(c){return c[1];}).length; $('#al-side').innerHTML='<div class="al-panel"><h4>What ALEPH can do</h4><div class="psub">'+live+' of '+AL_CAPS.length+' connected</div><div class="al-meter"><i style="width:'+Math.round(live/AL_CAPS.length*100)+'%"></i></div><div class="al-lbl">Live now</div>'+AL_CAPS.filter(function(c){return c[1];}).map(function(c){return '<div class="al-cap-row live"><span class="cd"></span><span class="ct">'+c[0]+'</span><span class="stp">'+c[2]+'</span></div>';}).join('')+'<div class="al-lbl">Connect more →</div>'+AL_CAPS.filter(function(c){return !c[1];}).map(function(c){return '<div class="al-cap-row off"><span class="cd"></span><span class="ct">'+c[0]+'</span><span class="stp">'+c[2]+'</span></div>';}).join('')+'</div>'; }
+var AL_CHIPS=[['Morning brief','brief me'],['Run the flow','run the flow'],['Fleet status','fleet status'],['Triage inbox','triage the inbox'],['Cost report','cost report'],['Migrate the site','migrate the site'],['What can you do?','what can you do']];
+function alRenderChips(){ $('#al-chips').innerHTML=AL_CHIPS.map(function(c){return '<button type="button" class="al-chip" data-cmd="'+c[1]+'">'+c[0]+'</button>';}).join(''); $$('#al-chips .al-chip').forEach(function(b){ b.addEventListener('click',function(){ if(!AL.busy)alephCommand(b.dataset.cmd); }); }); }
+function alSend(){ var inp=$('#al-text'),v=inp.value; inp.value=''; if(v.trim()&&!AL.busy)alephCommand(v); }
+function alephInit(){ if(AL.inited)return; AL.inited=true; alRenderChips();
+  $('#al-send').addEventListener('click',alSend);
+  $('#al-text').addEventListener('keydown',function(e){ if(e.key==='Enter'){e.preventDefault(); alSend();} });
+  $('#al-mute').addEventListener('click',function(){ AL.muted=!AL.muted; $('#al-mute').firstElementChild.innerHTML=ic(AL.muted?'mute':'sound'); if(AL.muted&&'speechSynthesis'in window)window.speechSynthesis.cancel(); toast(AL.muted?'ALEPH muted':'ALEPH voice on',AL.muted?'mute':'sound'); });
+  $('#al-mic').addEventListener('click',function(){ var m=$('#al-mic'); m.classList.toggle('on'); setAlephState(m.classList.contains('on')?'listening':'idle'); toast(m.classList.contains('on')?'Listening… (demo — type your command)':'Mic off','mic'); });
+  if('speechSynthesis'in window){ alPickVoice(); try{window.speechSynthesis.onvoiceschanged=alPickVoice;}catch(e){} }
+}
+function openVoice(){ var o=$('#voice-overlay'); if(o.classList.contains('open'))return; alephInit(); o.classList.add('open'); o.setAttribute('aria-hidden','false');
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches; setAlephState('listening'); AL.level=0; if(!AL_PTS)alSphere();
+  if(reduce){ var c=$('#voice-orb'),x=c.getContext('2d'); x.fillStyle='#06070c'; x.fillRect(0,0,c.width,c.height); var g=x.createRadialGradient(c.width/2,c.height/2,4,c.width/2,c.height/2,120); g.addColorStop(0,'hsla(150,70%,65%,.8)'); g.addColorStop(1,'hsla(150,70%,50%,0)'); x.fillStyle=g; x.beginPath(); x.arc(c.width/2,c.height/2,120,0,Math.PI*2); x.fill(); }
+  else if(!AL.raf){ AL.raf=requestAnimationFrame(alDraw); }
+  if(!AL.greeted){ AL.greeted=true; alBubble('sys','ALEPH online · '+(('speechSynthesis'in window)?'voice ready':'text mode')); setTimeout(function(){ alephSay("Evening, Stephane. Two agents are live and the migration's at round four — the cost report's ready when you want it. What shall we do?"); },420); }
   $('#voice-close').focus();
 }
-function setVoiceCap(){ $('#voice-state').textContent=VSTATES[voiceState][0]; $('#voice-cap').textContent=VSTATES[voiceState][1]; $('#voice-state').style.color=voiceState===1?'var(--violet)':'var(--accent-strong)'; }
-function closeVoice(){ var o=$('#voice-overlay'); o.classList.remove('open'); o.setAttribute('aria-hidden','true'); if(voiceRAF)cancelAnimationFrame(voiceRAF); if(voiceIv)clearInterval(voiceIv); voiceRAF=null; }
+function closeVoice(){ var o=$('#voice-overlay'),f=document.activeElement; if(f&&o.contains(f))f.blur(); o.classList.remove('open'); o.setAttribute('aria-hidden','true'); if(AL.raf){cancelAnimationFrame(AL.raf); AL.raf=null;} if('speechSynthesis'in window){try{window.speechSynthesis.cancel();}catch(e){}} AL.spk=0; AL.busy=false; setAlephState('idle'); }
 
 /* ---------- command palette ---------- */
 var PAL=[
