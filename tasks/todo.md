@@ -1,3 +1,14 @@
+# v8 — THE SKETCH, EXACTLY (2026-07-10) — vertical top-down flow + hero prompt box
+Stephane's 2nd product sketch: the canvas is a **scrollable top-down flow**, not horizontal. Build EXACTLY:
+- [ ] Canvas hero: "Hi Steph," greeting + report-type dropdown (Daily standup/Cost Report/Fleet heartbeat/Inbox digest/Weekly Review/Model benchmark/Outbound) + big **prompt box** (wavy placeholder, bottom bar: voice mic + ψ + Attach left, send circle right).
+- [ ] Framing annotations: Settings (Models·Connectors/Guardrails/Appearance/Lifecycle) top-left; status legend QUEUED/RUNNING/IN REVIEW/DONE; Inbox (Urgent/Needs reply/FYI/Noise) top-right.
+- [ ] Flow top→bottom: prompt → **Hook** (intent detected · router+recall) → **Brain** (206 facts/tiles, memory index, code graph, vector recall) ← dashed **Tools** (Plan) fed by counts fan (18 hook scripts/12 connectors/118 skills/11 scheduled/3 machines: macbook·mac mini·iCloud·GitHub; local/cloud) → **Reasoning layer** loop → **Orchestrator** big box (OPEN/PREVIEW/TASK/SAVED) + model list (Harness/llama local/claude Code/OpenAI Codex/X Build/Cursor/lovable +Add) + Model/Stop/Pause → **fork** (+, Quick Action).
+- [ ] Fan-out 3 subagents w/ beaded PR chains (green=done/orange=live/hollow=pending): PR185→Review→SUBAGENT1 (Round 1-6) · PR186 (QPA/linter/research/build)→Revamp SUBAGENT2 · local Research→Audit ⚠ SUBAGENT3 (+optimize speed).
+- [ ] Converge → **Report** robot node (0000) + deploy cube (Deploys/Artifacts) + verify/Persist · est. 10.00AM → tokens/Cost, Summary, Timeline, NEXT?.
+- [ ] Run engine drives subagent states + beads fill. Keep node ids review/revamp/migrate(→Audit) so run/ALEPH/inspector still wire. Drop horizontal drag → clean vertical scroll; click→inspector.
+- [ ] HOMEPAGE hero: add a **prompt box** + keep the **code-copy** (curl) concept. go crazy.
+- [ ] QA (0 errors, run animates beads, dark+mobile) → ship → verify live.
+
 # v7 — THE PLATFORM (2026-07-10) — "go crazy", full app behind the button
 Decisions (Stephane, batched grill): **instant demo workspace** on click · install = **`curl -fsSL https://conductor.build/install | sh`** · **live-streaming cockpit** run fidelity · land on **the canvas**.
 Spine: the landing is the trailer; "Get Started — it's free" BOOTS the real platform (full-screen takeover) where every click works on mock data, end-to-end, front-end only.
