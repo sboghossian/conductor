@@ -1,3 +1,20 @@
+# v7 — THE PLATFORM (2026-07-10) — "go crazy", full app behind the button
+Decisions (Stephane, batched grill): **instant demo workspace** on click · install = **`curl -fsSL https://conductor.build/install | sh`** · **live-streaming cockpit** run fidelity · land on **the canvas**.
+Spine: the landing is the trailer; "Get Started — it's free" BOOTS the real platform (full-screen takeover) where every click works on mock data, end-to-end, front-end only.
+- [x] Architecture: `#landing` + `#boot` (spin-up loader) + `#app` (full-viewport fixed overlay). Get Started → boot ~1.35s → app; "Exit to site" returns.
+- [x] Landing: hero + framed app preview + **one-command install** (`curl … | sh`, copy button) + wall + OSS + CTA + footer. sim.ai-tier polish (light/airy).
+- [x] App shell: chrome (browser/desktop, command bar, avatars, live, exit) + collapsible rail (nav + sessions) + stage (6 views) + status bar + inspector + voice orb.
+- [x] **Live run engine**: Run → queued→running (progress bars) → done; tokens stream into run console; cost/token/elapsed counters tick; on finish → fresh Report generated + toast + fleet done++. Pause/stop work.
+- [x] Canvas: draggable nodes, click→inspector w/ live log + artifacts + actions, model+agent dropdown pickers (relabel), hover quick-actions, add-node "+".
+- [x] Sessions swap workflow (WF map relabels fan-out nodes; inbox-triage→inbox view). Views: Fleet kanban, Inbox triage filter, Memory search, Reports gallery + reader modal, Settings toggles — all interactive.
+- [x] **⌘K command palette** — 14 actions, keyboard nav.
+- [x] Voice orb (particle canvas) listening/thinking/speaking + captions; hoisted to app-level (works from any view). Theme toggle. Reduced-motion + dark + mobile (no h-overflow).
+- [x] Charset fix (UTF-8 meta) — killed mojibake. Icon hydration made document-wide.
+- [x] Browser QA: 0 console errors across full session; run engine, all views, session-swap, modal, palette, voice, dark, mobile all verified.
+- [ ] GAUNTLET (code-reviewer + ux-designer sub-agents) → apply fixes → re-verify → ship to Pages → verify live.
+- [ ] Update project_conductor memory to v7.
+
+---
 # Conductor landing — v2 build plan
 
 Goal: the hero **is** the product UI, faithful to Stephane's sketch, interactive.
