@@ -48,6 +48,16 @@ Positioning: **100% open source** (MIT assumed), self-hostable, BYO Claude key. 
 - [ ] Reports enriched from ALEPH: add **Inbox triage** (urgent/needs-reply/fyi/noise + pre-drafted) + **Fleet heartbeat** (services/agents live·idle·down + metrics strip). Keep daily/weekly/cost/quarterly/benchmarks/front-page.
 - ALEPH source: ~/Documents/Code/aleph (yalla-brief, inbox-operator, daily-recap, usage meter, atlas home canvas of sessions).
 
+## v4 (2026-07-10) — "closest validity of the visual" · make the page BE the product
+- [ ] Hero = full-scale immersive **app-shell canvas**: chrome + left **sessions rail** + bottom **status bar** (cost/controls/eta/live).
+- [ ] Canvas is a **scrollable world** (larger than viewport) + draggable nodes → explore the full flow.
+- [ ] Per-node **model + agent toggle** = real clickable dropdown (Claude/GPT/Grok/Gemini/local · Reviewer/Builder/Migrator/Researcher). "change model & agent anytime."
+- [ ] Reports move **into the canvas** (a reports window w/ tabs) — remove standalone Reports section.
+- [ ] Runtimes move **into the canvas** (a runtimes dock) — remove standalone Runtimes section.
+- [ ] Richer nodes: Prompt+Dataroom, Brain = Obsidian+Notion+Slack+Teams+Linear+GitHub+Figma, Report = full anatomy (consumption·summary·timeline·done&verified·QA·tracking·what's next).
+- [ ] Bigger **feature wall** (~24) below the canvas.
+- [ ] Repo+Pages already up (github.com/sboghossian/conductor); push v4 → Pages rebuilds; /portfolio after.
+
 ## Verify — v2 PASSED (browser QA, 2026-07-10)
 - [x] 0 console errors; 8 nodes + 9 edges with computed paths + 3 labels + logos render
 - [x] reveal fires (stage.drawn, node.pop); report tabs switch (cost/feed panels toggle)
