@@ -48,6 +48,13 @@ Positioning: **100% open source** (MIT assumed), self-hostable, BYO Claude key. 
 - [ ] Reports enriched from ALEPH: add **Inbox triage** (urgent/needs-reply/fyi/noise + pre-drafted) + **Fleet heartbeat** (services/agents live·idle·down + metrics strip). Keep daily/weekly/cost/quarterly/benchmarks/front-page.
 - ALEPH source: ~/Documents/Code/aleph (yalla-brief, inbox-operator, daily-recap, usage meter, atlas home canvas of sessions).
 
+## v6 — SHIPPED + VERIFIED (2026-07-10): multi-view app + upgraded wall
+- Rail tabs = full working UIs: Canvas / Fleet (kanban dashboard) / Inbox (triage) / Memory (fact browser) / Reports (gallery) / Settings (keys·connectors·guardrails). View switcher + keyboard.
+- Sessions = use-cases that SWAP the canvas workflow (website-migration / blog-batch / seo-pass / benchmark-rerun relabel nodes; inbox-triage → inbox view).
+- Wall UPGRADED: 5 categorized color-coded bands (Orchestrate/See/Trust/Memory/Machines), 26 cells, 7 mini-UIs. Killed the flat uniform grid.
+- Built 5 views via parallel Sonnet squad; **scrubbed real HAQQ intel** (ARR/raise/investors/strategy) → generic demo data before ship (public repo).
+- Verified: 0 console errors, all views + workflow-swap + light interactions, dark + mobile.
+
 ## v5 — SHIPPED + VERIFIED + GAUNTLET-HARDENED (2026-07-10). Interactive: collapsible rail, clickable sessions, node inspector w/ live log, ALEPH voice orb, model/agent pickers, run/view controls. Gauntlet (2 adversarial agents) → fixed: hero chop (anchor+edge-fade), feature-wall accent discipline, icon fidelity (SVG marks), --muted contrast (AA), micro-type floor, rail dead-zone (Views), dead CTAs wired (toast), inspector occlusion (scroll-into-view), keyboard access, voice dialog a11y. 0 console errors, dark+mobile pass.
 
 ## v5 — RELEASE THE MONSTER (2026-07-10): full interactive demo, everything works

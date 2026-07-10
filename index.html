@@ -382,6 +382,90 @@ h1.hero-h .fade{color:var(--muted)}
 .voice-close svg{width:14px;height:14px}
 @media(max-width:1000px){.inspector{width:300px}}
 
+/* ===== VIEW SYSTEM (rail tabs = full working UIs) ===== */
+.stage{flex:1; position:relative; min-width:0}
+.view{position:absolute; inset:0; display:none}
+.view.on{display:block}
+.view.canvas{overflow:hidden}
+.view.vscroll{overflow-y:auto; padding:24px 28px}
+.vhead{margin-bottom:20px; display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap}
+.vhead h3{font-size:1.5rem; letter-spacing:-.025em}
+.vhead p{color:var(--ink-2); font-size:.94rem; margin-top:3px}
+.vhead .vh-right{margin-left:auto; display:flex; gap:8px; align-items:center}
+.vbtn{font-family:var(--mono); font-size:.72rem; padding:7px 12px; border-radius:9px; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink-2); display:inline-flex; align-items:center; gap:6px}
+.vbtn:hover{border-color:var(--ink-2); color:var(--ink)}
+.vbtn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+.vbtn svg{width:13px;height:13px}
+/* fleet */
+.fleet-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px}
+.fstat{border:1px solid var(--line); border-radius:12px; background:var(--surface); padding:15px 17px}
+.fstat .v{font-size:1.55rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.fstat .l{font-family:var(--mono); font-size:.66rem; color:var(--muted); margin-top:2px}
+.fstat .d{font-family:var(--mono); font-size:.62rem; color:var(--good); margin-top:3px}
+.kanban{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+@media(max-width:1000px){.kanban,.fleet-strip{grid-template-columns:repeat(2,1fr)}}
+.kcol{background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:11px; display:flex; flex-direction:column; gap:9px}
+.kcol .kh{font-family:var(--mono); font-size:.66rem; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); display:flex; justify-content:space-between; padding:2px 4px}
+.kcard{background:var(--surface); border:1px solid var(--line-strong); border-radius:10px; padding:10px 11px; box-shadow:var(--shadow-sm)}
+.kcard .kt{font-weight:600; font-size:.86rem; display:flex; align-items:center; gap:7px}
+.kcard .ks{font-family:var(--mono); font-size:.62rem; color:var(--muted); margin-top:3px}
+.kcard .krow{display:flex; align-items:center; gap:6px; margin-top:8px; flex-wrap:wrap}
+.kprog{height:4px;border-radius:100px;background:var(--surface-3);overflow:hidden;margin-top:8px}
+.kprog i{display:block;height:100%;border-radius:100px;background:var(--warn)}
+/* inbox */
+.inbox-layout{display:grid; grid-template-columns:180px 1fr; gap:16px}
+@media(max-width:760px){.inbox-layout{grid-template-columns:1fr}}
+.inb-buckets{display:flex; flex-direction:column; gap:7px}
+.inb-b{display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border:1px solid var(--line); border-radius:10px; background:var(--surface); font-size:.85rem; cursor:pointer; transition:.15s}
+.inb-b:hover{border-color:var(--line-strong)} .inb-b.on{border-color:var(--accent-line); background:var(--accent-soft); color:var(--accent-strong)}
+.inb-b .c{font-family:var(--mono); font-size:.72rem; color:var(--muted)}
+.inb-list{border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--surface)}
+.inb-row{display:flex; gap:11px; padding:13px 15px; border-bottom:1px solid var(--line-2); cursor:pointer; align-items:flex-start}
+.inb-row:last-child{border-bottom:none} .inb-row:hover,.inb-row.on{background:var(--surface-2)}
+.inb-row .dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex:none}
+.inb-row .ib{flex:1; min-width:0}
+.inb-row .if{font-weight:600; font-size:.88rem; display:flex; justify-content:space-between; gap:8px}
+.inb-row .if .tm{font-family:var(--mono); font-size:.62rem; color:var(--muted); font-weight:400; flex:none}
+.inb-row .is{font-size:.82rem; color:var(--ink-2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.inb-row .draft{font-family:var(--mono); font-size:.62rem; color:var(--good); margin-top:6px; display:inline-flex; align-items:center; gap:5px; padding:3px 8px; border-radius:100px; background:var(--good-soft)}
+/* memory */
+.mem-toolbar{display:flex; gap:10px; align-items:center; margin-bottom:16px; flex-wrap:wrap}
+.mem-search{flex:1; min-width:180px; display:flex; align-items:center; gap:8px; border:1px solid var(--line-strong); border-radius:10px; padding:9px 12px; background:var(--surface); color:var(--muted); font-family:var(--mono); font-size:.78rem}
+.mem-search svg{width:14px;height:14px}
+.mem-cats{display:flex; gap:6px; flex-wrap:wrap}
+.mem-cat{font-family:var(--mono); font-size:.7rem; padding:6px 11px; border-radius:100px; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink-2); cursor:pointer}
+.mem-cat.on{background:var(--accent); color:#fff; border-color:var(--accent)}
+.mem-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(228px,1fr)); gap:12px}
+.memcard{border:1px solid var(--line); border-radius:12px; background:var(--surface); padding:15px; transition:.2s}
+.memcard:hover{border-color:var(--line-strong); box-shadow:var(--shadow-sm)}
+.memcard .mtag{font-family:var(--mono); font-size:.6rem; padding:2px 8px; border-radius:100px; text-transform:uppercase; letter-spacing:.05em}
+.memcard h4{font-size:.92rem; margin:10px 0 5px; letter-spacing:-.01em}
+.memcard p{font-size:.82rem; color:var(--ink-2); line-height:1.45}
+.memcard .src{font-family:var(--mono); font-size:.62rem; color:var(--accent-strong); margin-top:10px; display:inline-flex; align-items:center; gap:5px}
+/* report gallery */
+.rep-gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px}
+.repg{border:1px solid var(--line); border-radius:14px; background:var(--surface); overflow:hidden; transition:.2s; cursor:pointer}
+.repg:hover{border-color:var(--line-strong); box-shadow:var(--shadow-md); transform:translateY(-2px)}
+.repg .rgh{padding:13px 15px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:9px}
+.repg .rgh .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;flex:none}
+.repg .rgh .t{font-weight:600; font-size:.9rem; letter-spacing:-.01em} .repg .rgh .s{font-family:var(--mono); font-size:.6rem; color:var(--muted); margin-left:auto}
+.repg .rgb{padding:13px 15px; font-family:var(--mono); font-size:.72rem; color:var(--ink-2); line-height:1.75}
+.repg .rgb b{color:var(--ink)}
+/* settings */
+.set-sec{border:1px solid var(--line); border-radius:14px; background:var(--surface); margin-bottom:16px; overflow:hidden; max-width:760px}
+.set-sec .sh{padding:14px 18px; border-bottom:1px solid var(--line); font-weight:600; font-size:.98rem; display:flex; align-items:center; gap:9px}
+.set-sec .sh svg{width:16px;height:16px;color:var(--muted)}
+.set-row{display:flex; align-items:center; gap:12px; padding:13px 18px; border-bottom:1px solid var(--line-2)}
+.set-row:last-child{border-bottom:none}
+.set-row .sl{font-size:.88rem; font-weight:500} .set-row .sd{font-family:var(--mono); font-size:.64rem; color:var(--muted); margin-top:1px}
+.set-row .sr{margin-left:auto; display:flex; align-items:center; gap:9px}
+.keychip{font-family:var(--mono); font-size:.64rem; padding:4px 9px; border-radius:7px; background:var(--good-soft); color:var(--good)}
+.keychip.off{background:var(--surface-3); color:var(--muted)}
+.set-model{font-family:var(--mono);font-size:.68rem;color:var(--ink-2);border:1px solid var(--line-strong);border-radius:7px;padding:5px 9px;background:var(--surface-2)}
+.toggle{width:38px;height:22px;border-radius:100px;background:var(--surface-3);border:1px solid var(--line-strong);position:relative;cursor:pointer;flex:none;transition:.2s}
+.toggle::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--surface);box-shadow:var(--shadow-sm);transition:.2s}
+.toggle.on{background:var(--accent);border-color:var(--accent)} .toggle.on::after{left:18px}
+
 /* mobile: swap app for a stacked flow */
 .app-m{display:none}
 @media(max-width:860px){
@@ -410,8 +494,22 @@ h1.hero-h .fade{color:var(--muted)}
 .cell:hover{border-color:var(--line-strong); box-shadow:var(--shadow-md); transform:translateY(-2px)}
 .cell .fi{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;margin-bottom:12px}
 .cell .fi svg{width:18px;height:18px}
-/* accent discipline: compact wall icons hold ONE accent; featured cells keep their sectioned color */
-.wall2 .cell:not(.feat2) .fi{background:var(--accent-soft) !important; color:var(--accent) !important}
+/* categorized wall: color = category (logical), not random */
+.wall-cat{margin-top:38px} .wall-cat:first-of-type{margin-top:0}
+.cat-hd{display:flex; align-items:center; gap:10px; margin-bottom:14px}
+.cat-hd .dot{width:9px;height:9px;border-radius:3px;flex:none}
+.cat-hd h3{font-size:1.06rem; letter-spacing:-.01em}
+.cat-hd .n{margin-left:auto; font-family:var(--mono); font-size:.66rem; color:var(--muted)}
+.cat-orch .dot{background:var(--accent)} .cat-orch .fi{background:var(--accent-soft);color:var(--accent)}
+.cat-see .dot{background:var(--blue)} .cat-see .fi{background:var(--blue-soft);color:var(--blue)}
+.cat-trust .dot{background:var(--good)} .cat-trust .fi{background:var(--good-soft);color:var(--good)}
+.cat-mem .dot{background:var(--violet)} .cat-mem .fi{background:var(--violet-soft);color:var(--violet)}
+.cat-mach .dot{background:var(--warn)} .cat-mach .fi{background:var(--warn-soft);color:var(--warn)}
+.rt-mini{display:flex;flex-wrap:wrap;gap:5px}
+.rt-mini span{font-family:var(--mono);font-size:.64rem;padding:4px 8px;border-radius:100px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-2);display:inline-flex;align-items:center;gap:5px}
+.wave{display:flex;align-items:center;gap:3px;height:22px}
+.wave i{width:3px;border-radius:2px;background:var(--warn);animation:wv 1s ease-in-out infinite}
+@keyframes wv{0%,100%{height:5px}50%{height:20px}}
 .cell h3{font-size:1rem; letter-spacing:-.015em}
 .cell p{margin-top:6px; color:var(--ink-2); font-size:.88rem; line-height:1.5}
 .cell.feat2{grid-column:span 2}
@@ -522,10 +620,12 @@ footer{border-top:1px solid var(--line); padding:54px 0 40px; margin-top:20px}
           <div class="sess"><span class="sd idle"></span><div class="sbody"><div class="st">benchmark-rerun</div><div class="ss">idle</div></div></div>
           <div class="rail-sep"></div>
           <nav class="rail-nav" aria-label="Views">
-            <div class="rn on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> Canvas</div>
-            <div class="rn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 3 7.5 12 12l9-4.5zM3 12l9 4.5L21 12M3 16.5 12 21l9-4.5"/></svg> Fleet</div>
-            <div class="rn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg> Inbox</div>
-            <div class="rn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8 7l3 9M16 8.5l-3 7.5M8 6.5h8"/></svg> Memory</div>
+            <div class="rn on" data-view="canvas" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> Canvas</div>
+            <div class="rn" data-view="fleet" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 3 7.5 12 12l9-4.5zM3 12l9 4.5L21 12M3 16.5 12 21l9-4.5"/></svg> Fleet</div>
+            <div class="rn" data-view="inbox" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg> Inbox</div>
+            <div class="rn" data-view="memory" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8 7l3 9M16 8.5l-3 7.5M8 6.5h8"/></svg> Memory</div>
+            <div class="rn" data-view="reports" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h7"/></svg> Reports</div>
+            <div class="rn" data-view="settings" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 2.6 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 7 2.6h.1A1.6 1.6 0 0 0 8 1.1V1a2 2 0 1 1 4 0v.1A1.6 1.6 0 0 0 15 2.6a1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.1a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.4 1z" transform="scale(0.82) translate(2.6 2.6)"/></svg> Settings</div>
           </nav>
           <div class="rail-foot">
             <div class="rf"><span class="d"></span> 2 machines · awake</div>
@@ -534,7 +634,9 @@ footer{border-top:1px solid var(--line); padding:54px 0 40px; margin-top:20px}
           </div>
         </aside>
 
-        <!-- viewport + world -->
+        <!-- views: rail tabs each render a full working UI -->
+        <div class="stage" id="stage">
+        <div class="view canvas on" data-view="canvas">
         <div class="viewport" id="viewport">
           <div class="world" id="world">
             <svg class="edges-svg" id="edges" width="1720" height="1200" viewBox="0 0 1720 1200" aria-hidden="true"></svg>
@@ -682,6 +784,126 @@ footer{border-top:1px solid var(--line); padding:54px 0 40px; margin-top:20px}
             </div>
           </div>
         </div>
+        </div><!-- /canvas view -->
+
+        <!-- FLEET -->
+        <div class="view vscroll" data-view="fleet">
+          <div class="vhead"><h3>Fleet</h3><p>Every agent and run across your sessions, on one board.</p><div class="vh-right"><button class="vbtn primary" type="button">+ New run</button><button class="vbtn" type="button">Refresh</button></div></div>
+          <div class="fleet-strip">
+            <div class="fstat"><div class="v">6</div><div class="l">agents alive</div><div class="d">▲ 2 today</div></div>
+            <div class="fstat"><div class="v">3</div><div class="l">running now</div><div class="d">2 sonnet · 1 opus</div></div>
+            <div class="fstat"><div class="v">$3.18</div><div class="l">spend today / $50 cap</div><div class="d">6% of cap</div></div>
+            <div class="fstat"><div class="v">2</div><div class="l">machines awake</div><div class="d">all reachable</div></div>
+          </div>
+          <div class="kanban">
+            <div class="kcol"><div class="kh">Queued <span>2</span></div>
+              <div class="kcard"><div class="kt">SEO metadata pass</div><div class="ks">seo-pass · haiku-4.5</div><div class="krow"><span class="chip chip-line">GRO-877</span></div></div>
+              <div class="kcard"><div class="kt">Benchmark rerun</div><div class="ks">benchmark · opus vs gpt-5</div><div class="krow"><span class="chip chip-line">nightly</span></div></div>
+            </div>
+            <div class="kcol"><div class="kh">Running <span>3</span></div>
+              <div class="kcard"><div class="kt">Revamp · PR #186</div><div class="ks">website-migration · sonnet-5</div><div class="kprog"><i style="width:46%"></i></div><div class="krow"><span class="dotpulse run"></span><span class="chip chip-run">46%</span><span class="chip chip-cost">$0.42</span></div></div>
+              <div class="kcard"><div class="kt">Blog · post 3/5</div><div class="ks">blog-batch · opus-4.8</div><div class="kprog"><i style="width:60%"></i></div><div class="krow"><span class="dotpulse run"></span><span class="chip chip-run">60%</span></div></div>
+              <div class="kcard"><div class="kt">Growth metrics</div><div class="ks">analytics · sonnet-5</div><div class="kprog"><i style="width:28%"></i></div><div class="krow"><span class="dotpulse run"></span><span class="chip chip-run">28%</span></div></div>
+            </div>
+            <div class="kcol"><div class="kh">In review <span>2</span></div>
+              <div class="kcard"><div class="kt">Migrate · GRO-865</div><div class="ks">website-migration · haiku-4.5</div><div class="krow"><span class="chip chip-run">⚠ needs review</span></div></div>
+              <div class="kcard"><div class="kt">Review · PR #185</div><div class="ks">website-migration · opus-4.8</div><div class="krow"><span class="chip chip-line">14 files</span></div></div>
+            </div>
+            <div class="kcol"><div class="kh">Done <span>2</span></div>
+              <div class="kcard"><div class="kt">Hero revamp</div><div class="ks">website-migration · sonnet-5</div><div class="krow"><span class="dotpulse ok"></span><span class="chip chip-done">✓ verified</span></div></div>
+              <div class="kcard"><div class="kt">Nav rebuild</div><div class="ks">website-migration · sonnet-5</div><div class="krow"><span class="dotpulse ok"></span><span class="chip chip-done">✓ verified</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INBOX -->
+        <div class="view vscroll" data-view="inbox">
+          <div class="vhead"><h3>Inbox triage</h3><p>Overnight sweep of your mail. Drafts staged in your voice — nothing sent.</p><div class="vh-right"><button class="vbtn primary" type="button">Run now</button></div></div>
+          <div class="inbox-layout">
+            <div class="inb-buckets">
+              <div class="inb-b on"><span>Urgent</span><span class="c">3</span></div>
+              <div class="inb-b"><span>Needs reply</span><span class="c">8</span></div>
+              <div class="inb-b"><span>FYI</span><span class="c">12</span></div>
+              <div class="inb-b"><span>Noise</span><span class="c">29</span></div>
+            </div>
+            <div class="inb-list">
+              <div class="inb-row"><span class="dot" style="background:var(--red)"></span><div class="ib"><div class="if"><span>Design lead</span><span class="tm">04:52</span></div><div class="is">Re: hero direction — needs your call before deploy</div><div class="draft">✓ draft ready · your voice</div></div></div>
+              <div class="inb-row"><span class="dot" style="background:var(--red)"></span><div class="ib"><div class="if"><span>Review agent</span><span class="tm">05:31</span></div><div class="is">PR #185 flagged 3 items for a human look</div><div class="draft">✓ draft ready · your voice</div></div></div>
+              <div class="inb-row"><span class="dot" style="background:var(--warn)"></span><div class="ib"><div class="if"><span>Conférence produit</span><span class="tm">23:14</span></div><div class="is">Confirmation — table ronde « IA &amp; agents », 18 sept.</div><div class="draft">✓ draft ready · your voice</div></div></div>
+              <div class="inb-row"><span class="dot" style="background:var(--warn)"></span><div class="ib"><div class="if"><span>Ops</span><span class="tm">22:40</span></div><div class="is">Deploy approval — staging is green, waiting on you</div><div class="draft">✓ draft ready · your voice</div></div></div>
+              <div class="inb-row"><span class="dot" style="background:var(--warn)"></span><div class="ib"><div class="if"><span>Vendor</span><span class="tm">21:05</span></div><div class="is">Annual plan renewal — quote attached</div><div class="draft">✓ draft ready · your voice</div></div></div>
+              <div class="inb-row"><span class="dot" style="background:var(--blue)"></span><div class="ib"><div class="if"><span>Analytics</span><span class="tm">02:14</span></div><div class="is">Signups down 18% overnight — anomaly on signup event</div></div></div>
+              <div class="inb-row"><span class="dot" style="background:var(--muted)"></span><div class="ib"><div class="if"><span>Newsletter</span><span class="tm">06:00</span></div><div class="is">5 growth hacks every team is testing this year</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEMORY -->
+        <div class="view vscroll" data-view="memory">
+          <div class="vhead"><h3>Memory</h3><p>412 facts · auto-linked · every source traceable.</p><div class="vh-right"><button class="vbtn primary" type="button">+ Add fact</button></div></div>
+          <div class="mem-toolbar"><div class="mem-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg> search 412 facts…</div><div class="mem-cats"><span class="mem-cat on">All</span><span class="mem-cat">User</span><span class="mem-cat">Project</span><span class="mem-cat">Reference</span><span class="mem-cat">Feedback</span></div></div>
+          <div class="mem-grid">
+            <div class="memcard"><span class="mtag" style="background:var(--blue-soft);color:var(--blue)">user</span><h4>Works minimal-diff</h4><p>Prefers the smallest change that solves it; delete lines before adding.</p><div class="src">← coding style</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--accent-soft);color:var(--accent)">project</span><h4>Deploy = merge to main</h4><p>Merging to main publishes to production — a hard stop that needs an explicit yes.</p><div class="src">← workflow</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--violet-soft);color:var(--violet)">reference</span><h4>Design tokens</h4><p>One clay accent, warm-paper neutrals; sans for prose, mono for the machine layer.</p><div class="src">← design system</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--good-soft);color:var(--good)">feedback</span><h4>Verify before done</h4><p>Never call a task done until the flow has been driven and the result observed.</p><div class="src">← calibration</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--accent-soft);color:var(--accent)">project</span><h4>Runs on Next 16</h4><p>SSR + one shared database, served from the edge. Don't touch the shared DB.</p><div class="src">← migration notes</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--blue-soft);color:var(--blue)">user</span><h4>Early riser</h4><p>Deep-work mornings; keep the heavy decisions before noon.</p><div class="src">← profile</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--violet-soft);color:var(--violet)">reference</span><h4>Connected tools</h4><p>Linear, GitHub, Figma, Slack, and PostHog are wired in — check them before asking.</p><div class="src">← data sources</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--good-soft);color:var(--good)">feedback</span><h4>Ticket the work</h4><p>Anything that produces an artifact or a decision gets a tracked ticket, closed when verified.</p><div class="src">← ticket lifecycle</div></div>
+            <div class="memcard"><span class="mtag" style="background:var(--accent-soft);color:var(--accent)">project</span><h4>USD-only pricing</h4><p>The site shows one currency, no switcher; localized cases handled off-site.</p><div class="src">← pricing note</div></div>
+          </div>
+        </div>
+
+        <!-- REPORTS -->
+        <div class="view vscroll" data-view="reports">
+          <div class="vhead"><h3>Reports</h3><p>Not one report — a newsroom for your fleet. Delivered on your schedule.</p><div class="vh-right"><button class="vbtn primary" type="button">+ Schedule</button></div></div>
+          <div class="rep-gallery">
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--accent-soft);color:var(--accent)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div><div class="t">Daily standup</div><div class="s">10:00 AM</div></div><div class="rgb"><b>6</b> done · verified<br>spend <b>$3.18</b> · 1.9M tokens<br>1 at the gate</div></div>
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg></div><div class="t">Inbox triage</div><div class="s">05:30 daily</div></div><div class="rgb"><b>52</b> scanned · <b>8</b> pre-drafted<br>drafts staged in your voice<br>0 sent — human gate holds</div></div>
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--good-soft);color:var(--good)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12h4l2-7 4 14 2-7h4l2 3h2"/></svg></div><div class="t">Fleet heartbeat</div><div class="s">live</div></div><div class="rgb"><b>6</b> agents · all nominal<br>Migrate at the gate<br>last check 41s ago</div></div>
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--violet-soft);color:var(--violet)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><div class="t">Weekly digest</div><div class="s">Mon 9 AM</div></div><div class="rgb"><b>27</b> tasks shipped &amp; verified<br>throughput <b>+18%</b> WoW<br>0 regressions</div></div>
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--warn-soft);color:var(--warn)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="t">Cost report</div><div class="s">by model</div></div><div class="rgb">opus <b>$26.30</b> · sonnet <b>$11.40</b><br>haiku <b>$3.50</b> · 71% of volume<br>under cap every run</div></div>
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--accent-soft);color:var(--accent)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M5 20v-8M10.5 20V6M16 20v-11"/></svg></div><div class="t">Benchmark board</div><div class="s">auto</div></div><div class="rgb">Review agent <b>96%</b> pass<br>Migrate <b>78%</b> · regression flagged<br>re-runs nightly</div></div>
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><div class="t">Quarterly rollup</div><div class="s">per quarter</div></div><div class="rgb"><b>312</b> tasks closed<br><b>98.4%</b> verified green<br>spend <b>$486</b> · under budget</div></div>
+            <div class="repg"><div class="rgh"><div class="ic" style="background:var(--violet-soft);color:var(--violet)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div class="t">The front page</div><div class="s">daily edition</div></div><div class="rgb">Lead: migration clears review<br>Below: 3 tasks queued tonight<br>printed daily · archived</div></div>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="view vscroll" data-view="settings">
+          <div class="vhead"><h3>Settings</h3><p>Your keys, your connectors, your guardrails — all local.</p></div>
+          <div class="set-sec">
+            <div class="sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="15" r="4"/><path d="M10.5 11.5 20 2M16.5 6 19 8.5M13.5 9 16 11.5"/></svg> Models &amp; keys</div>
+            <div class="set-row"><div><div class="sl">Anthropic</div><div class="sd">opus-4.8 · sonnet-5 · haiku-4.5</div></div><div class="sr"><span class="keychip">key set</span><span class="set-model">claude-opus-4.8</span></div></div>
+            <div class="set-row"><div><div class="sl">OpenAI</div><div class="sd">gpt-5 · gpt-5-mini</div></div><div class="sr"><span class="keychip">key set</span><span class="set-model">gpt-5</span></div></div>
+            <div class="set-row"><div><div class="sl">xAI</div><div class="sd">grok-4 · grok-4-fast</div></div><div class="sr"><span class="keychip off">no key</span></div></div>
+            <div class="set-row"><div><div class="sl">Google</div><div class="sd">gemini-2.5-pro · flash</div></div><div class="sr"><span class="keychip">key set</span><span class="set-model">gemini-2.5</span></div></div>
+            <div class="set-row"><div><div class="sl">Ollama · local</div><div class="sd">on-device · private</div></div><div class="sr"><span class="keychip">running</span></div></div>
+          </div>
+          <div class="set-sec">
+            <div class="sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2v4M15 2v4M7 8h10l-1 5a4 4 0 0 1-8 0L7 8Z"/><path d="M12 18v4"/></svg> Connectors</div>
+            <div class="set-row"><div><div class="sl">GitHub</div><div class="sd">repos · pull requests · issues</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">Linear</div><div class="sd">issues · projects · cycles</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">Figma</div><div class="sd">files · frames · comments</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">Slack</div><div class="sd">channels · threads</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">Notion</div><div class="sd">pages · databases</div></div><div class="sr"><span class="toggle"></span></div></div>
+            <div class="set-row"><div><div class="sl">PostHog</div><div class="sd">events · cohorts · dashboards</div></div><div class="sr"><span class="toggle on"></span></div></div>
+          </div>
+          <div class="set-sec">
+            <div class="sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9.5 12l2 2 3.5-4"/></svg> Guardrails</div>
+            <div class="set-row"><div><div class="sl">Plan-gate</div><div class="sd">no multi-file edits without an approved plan</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">Verify-gate</div><div class="sd">no "done" until the change is exercised</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">Human gate · sends, deploys, CRM</div><div class="sd">pause for approval before anything external fires</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">World-model check</div><div class="sd">lookahead + rollback before autonomous multi-step</div></div><div class="sr"><span class="toggle on"></span></div></div>
+            <div class="set-row"><div><div class="sl">Autonomous send</div><div class="sd">never · human-in-the-loop</div></div><div class="sr"><span class="toggle"></span></div></div>
+          </div>
+          <div class="set-sec">
+            <div class="sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg> Appearance</div>
+            <div class="set-row"><div><div class="sl">Theme</div><div class="sd">Light / Dark / System</div></div><div class="sr"><span class="set-model">System</span></div></div>
+          </div>
+        </div>
+        </div><!-- /stage -->
 
         <!-- node inspector -->
         <aside class="inspector" id="inspector" aria-hidden="true">
@@ -735,31 +957,61 @@ footer{border-top:1px solid var(--line); padding:54px 0 40px; margin-top:20px}
       <h2>Not a chat box. A cockpit.</h2>
       <p>Everything a chat window makes you do by hand — attention, cost, memory, trust, replay, scheduling — Conductor makes visible and operable.</p>
     </div>
-    <div class="wall2">
-      <div class="cell feat2 reveal"><div class="fi" style="background:var(--violet-soft);color:var(--violet)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/><circle cx="16.5" cy="14.5" r="2.5"/></svg></div><h3>Any model. Any agent. Swap anytime.</h3><p>Pick an agent type per session and the model that drives it. Change models or rotate keys mid-run — right on the node.</p><div class="mini"><div class="mini-box"><div class="mrow on">◆ claude-opus-4.8 <span class="ty">reviewer ✓</span></div><div class="mrow">◆ claude-sonnet-5 <span class="ty">builder</span></div><div class="mrow">◇ gpt-5 <span class="ty">researcher</span></div><div class="mrow">◇ gemini-2.5 <span class="ty">migrator</span></div></div></div></div>
-      <div class="cell feat2 reveal"><div class="fi" style="background:var(--warn-soft);color:var(--warn)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v4M20 12a8 8 0 0 1-8 8M4 12a8 8 0 0 1 8-8"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Attention triage</h3><p>A rail that ranks what needs a human before anything blocks — approvals, ambiguous diffs, failing checks.</p><div class="mini"><div class="mini-box"><div class="trow"><span class="dotpulse run"></span> approve deploy · haqq.ai <span class="rt" style="color:var(--accent-strong)">now</span></div><div class="trow"><span class="dotpulse" style="background:var(--warn)"></span> diff needs eyes · PR #185 <span class="rt" style="color:var(--muted)">2m</span></div><div class="trow"><span class="dotpulse ok"></span> 4 agents nominal <span class="rt" style="color:var(--muted)">—</span></div></div></div></div>
-      <div class="cell feat2 reveal"><div class="fi" style="background:var(--accent-soft);color:var(--accent)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Cost before you run</h3><p>See ≈$ for a task before you press go. Ambient spend ticks as agents work, capped where you set it.</p><div class="mini"><div class="mini-box"><div style="display:flex;justify-content:space-between"><span>estimate</span><span style="color:var(--accent-strong)" id="feat-cost">≈ $0.42</span></div><div class="meter"><i style="width:42%"></i></div><div style="display:flex;justify-content:space-between;color:var(--muted)"><span>cap</span><span>$5.00</span></div></div></div></div>
-      <div class="cell feat2 reveal"><div class="fi" style="background:var(--good-soft);color:var(--good)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h10M11 8l4 4-4 4M20 5v14"/></svg></div><h3>Handoff &amp; human gate</h3><p>Agents review each other. Sends, deploys, and CRM writes stop at a gate — nothing irreversible ships without your yes.</p><div class="mini"><div class="gateflow"><span class="g">agent A<br>builds</span><span class="arw">→</span><span class="g">agent B<br>reviews</span><span class="arw">→</span><span class="g gate">human gate<br>awaiting you</span><span class="arw">→</span><span class="g">deploy</span></div></div></div>
-
-      <div class="cell reveal"><div class="fi" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 7l3 9M16 7l-3 9M8 6h8"/></svg></div><h3>Memory you can see</h3><p>Browse it, edit it, trace where every fact came from.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--accent-soft);color:var(--accent)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Session replay</h3><p>Scrub any run back and forth, move by move.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--violet-soft);color:var(--violet)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M6 8v4a4 4 0 0 0 4 4h6"/></svg></div><h3>Fork any run</h3><p>Branch a versioned v2 to try an alt approach.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v5h5M14 3l5 5v11H5V3h9Z"/><path d="M8 13h8M8 16h5"/></svg></div><h3>Datarooms</h3><p>Attach files to a session — agents read them all.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--accent-soft);color:var(--accent)">✳</div><h3>Skills, MCPs &amp; prompts</h3><p>Compose the exact toolset each agent may touch.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--good-soft);color:var(--good)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Scheduled runs</h3><p>Fire on a cron. Wake up to reports, not backlog.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--warn-soft);color:var(--warn)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 21h4"/></svg></div><h3>Ambient heartbeat</h3><p>It speaks up when something needs you — not before.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--red-soft);color:var(--red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg></div><h3>Voice control</h3><p>Talk to your fleet. Ask what's up, spawn a session.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Approvals &amp; audit</h3><p>Every gated action, logged and reversible.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--violet-soft);color:var(--violet)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Private mode</h3><p>Route to a local model — nothing leaves your Mac.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--good-soft);color:var(--good)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="9" height="7" rx="1"/><rect x="13" y="12" width="9" height="7" rx="1"/><path d="M6.5 12v3.5h11"/></svg></div><h3>Multi-machine mesh</h3><p>Run agents on any Mac you own, from one canvas.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--accent-soft);color:var(--accent)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l5-5 4 4 8-8"/><path d="M16 7h4v4"/></svg></div><h3>Live cost meter</h3><p>Tokens and dollars per agent, session and lifetime.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18M3 12h18"/></svg></div><h3>Vector recall</h3><p>Semantic search over memory, fed back into context.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--violet-soft);color:var(--violet)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></div><h3>Code graph</h3><p>Symbols, edges, files — answers without re-reading.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--warn-soft);color:var(--warn)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v6M5 21l3-8h8l3 8M9 13a3 3 0 0 0 6 0"/></svg></div><h3>Sub-agent fleet</h3><p>Spawn helpers on demand, in parallel, isolated.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--good-soft);color:var(--good)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>Model routing</h3><p>Send the mechanical work to the cheapest model that clears the bar.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--accent-soft);color:var(--accent)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><h3>Token savers</h3><p>Trim 60–90% of tokens, transparently.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--red-soft);color:var(--red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/></svg></div><h3>Guardrails</h3><p>Plan-gate, verify-gate, world-model check on actions.</p></div>
-      <div class="cell reveal"><div class="fi" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div><h3>Reports, any slice</h3><p>Daily, inbox, fleet, cost, benchmarks, front page.</p></div>
+    <!-- Orchestrate -->
+    <div class="wall-cat cat-orch reveal">
+      <div class="cat-hd"><span class="dot"></span><h3>Orchestrate</h3><span class="n">you hold the baton</span></div>
+      <div class="wall2">
+        <div class="cell feat2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/><circle cx="16.5" cy="14.5" r="2.5"/></svg></div><h3>Any model. Any agent. Swap anytime.</h3><p>Pick an agent type per session and the model that drives it. Change models or rotate keys mid-run, right on the node.</p><div class="mini"><div class="mini-box"><div class="mrow on">◆ claude-opus-4.8 <span class="ty">reviewer ✓</span></div><div class="mrow">◆ claude-sonnet-5 <span class="ty">builder</span></div><div class="mrow">◇ gpt-5 <span class="ty">researcher</span></div><div class="mrow">◇ gemini-2.5 <span class="ty">migrator</span></div></div></div></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="12" r="2.2"/><circle cx="19" cy="5" r="2.2"/><circle cx="19" cy="12" r="2.2"/><circle cx="19" cy="19" r="2.2"/><path d="M7 12h3M12 12l5-6.5M12 12h5M12 12l5 6.5"/></svg></div><h3>Fan-out fleet</h3><p>One instruction spawns a fleet, each agent on its own branch or ticket.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>Model routing</h3><p>Send the mechanical work to the cheapest model that clears the bar.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M6 8v4a4 4 0 0 0 4 4h6"/></svg></div><h3>Fork any run</h3><p>Branch a versioned v2 to try an alternative approach.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v6M5 21l3-8h8l3 8M9 13a3 3 0 0 0 6 0"/></svg></div><h3>Sub-agent fleet</h3><p>Spawn helpers on demand, in parallel, isolated.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Scheduled runs</h3><p>Fire on a cron. Wake up to reports, not a backlog.</p></div>
+      </div>
+    </div>
+    <!-- See everything -->
+    <div class="wall-cat cat-see reveal">
+      <div class="cat-hd"><span class="dot"></span><h3>See everything</h3><span class="n">nothing hidden</span></div>
+      <div class="wall2">
+        <div class="cell feat2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v4M20 12a8 8 0 0 1-8 8M4 12a8 8 0 0 1 8-8"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Attention triage</h3><p>A rail that ranks what needs a human before anything blocks — approvals, ambiguous diffs, failing checks.</p><div class="mini"><div class="mini-box"><div class="trow"><span class="dotpulse run"></span> approve deploy <span class="rt" style="color:var(--accent-strong)">now</span></div><div class="trow"><span class="dotpulse" style="background:var(--warn)"></span> diff needs eyes · PR #185 <span class="rt" style="color:var(--muted)">2m</span></div><div class="trow"><span class="dotpulse ok"></span> 4 agents nominal <span class="rt" style="color:var(--muted)">—</span></div></div></div></div>
+        <div class="cell feat2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Agent-aware preview</h3><p>The live preview highlights the exact element an agent is editing, in real time.</p><div class="mini"><div class="preview-frame"><div class="pbar"><i></i><i></i><i></i></div><div class="preview-body"><div class="blk" style="width:70%"></div><div class="blk hl" style="width:52%"></div><div class="blk" style="width:84%"></div></div></div></div></div>
+        <div class="cell feat2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Cost before you run</h3><p>See ≈$ for a task before you press go. Ambient spend ticks as agents work, capped where you set it.</p><div class="mini"><div class="mini-box"><div style="display:flex;justify-content:space-between"><span>estimate</span><span style="color:var(--accent-strong)" id="feat-cost">≈ $0.42</span></div><div class="meter"><i style="width:42%"></i></div><div style="display:flex;justify-content:space-between;color:var(--muted)"><span>cap</span><span>$5.00</span></div></div></div></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l5-5 4 4 8-8"/><path d="M16 7h4v4"/></svg></div><h3>Live cost meter</h3><p>Tokens and dollars per agent, session and lifetime.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Session replay</h3><p>Scrub any run back and forth, move by move.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div><h3>Reports, any slice</h3><p>Daily, inbox, fleet, cost, benchmarks, front page.</p></div>
+      </div>
+    </div>
+    <!-- Trust -->
+    <div class="wall-cat cat-trust reveal">
+      <div class="cat-hd"><span class="dot"></span><h3>Trust &amp; safety</h3><span class="n">human in the loop</span></div>
+      <div class="wall2">
+        <div class="cell feat2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h10M11 8l4 4-4 4M20 5v14"/></svg></div><h3>Handoff &amp; human gate</h3><p>Agents review each other. Sends, deploys, and CRM writes stop at a gate — nothing irreversible ships without your yes.</p><div class="mini"><div class="gateflow"><span class="g">agent A<br>builds</span><span class="arw">→</span><span class="g">agent B<br>reviews</span><span class="arw">→</span><span class="g gate">human gate<br>awaiting you</span><span class="arw">→</span><span class="g">deploy</span></div></div></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Approvals &amp; audit</h3><p>Every gated action, logged and reversible.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/></svg></div><h3>Guardrails</h3><p>Plan-gate, verify-gate, world-model check on actions.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div><h3>Verify everything</h3><p>Runs the flow and observes behavior before it calls a task done.</p></div>
+      </div>
+    </div>
+    <!-- Memory -->
+    <div class="wall-cat cat-mem reveal">
+      <div class="cat-hd"><span class="dot"></span><h3>Memory</h3><span class="n">a brain you can see</span></div>
+      <div class="wall2">
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 7l3 9M16 7l-3 9M8 6h8"/></svg></div><h3>Memory you can see</h3><p>Browse it, edit it, trace where every fact came from.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18M3 12h18"/></svg></div><h3>Vector recall</h3><p>Semantic search over memory, fed back into context.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></div><h3>Code graph</h3><p>Symbols, edges, files — answers without re-reading.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v5h5M14 3l5 5v11H5V3h9Z"/><path d="M8 13h8M8 16h5"/></svg></div><h3>Datarooms</h3><p>Attach files to a session — agents read them all.</p></div>
+      </div>
+    </div>
+    <!-- Any model, any machine -->
+    <div class="wall-cat cat-mach reveal">
+      <div class="cat-hd"><span class="dot"></span><h3>Any model, any machine</h3><span class="n">open &amp; yours</span></div>
+      <div class="wall2">
+        <div class="cell feat2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="9" height="7" rx="1"/><rect x="13" y="12" width="9" height="7" rx="1"/><path d="M6.5 12v3.5h11"/></svg></div><h3>Every runtime, one canvas</h3><p>Claude leads. GPT, Grok, Gemini, and local Ollama plug into the same board — swap per agent, rotate keys anytime.</p><div class="mini"><div class="rt-mini"><span>Claude</span><span>GPT-5</span><span>Grok</span><span>Gemini</span><span>local · ollama</span></div></div></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Multi-machine mesh</h3><p>Run agents on any machine you own, from one canvas.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Private mode</h3><p>Route to a local model — nothing leaves your machine.</p></div>
+        <div class="cell feat2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg></div><h3>Voice control</h3><p>Talk to your fleet. Ask what's up, spawn a session, approve a gate — hands-free.</p><div class="mini"><div class="wave"><i style="animation-delay:0s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.25s"></i><i style="animation-delay:.05s"></i><i style="animation-delay:.35s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.1s"></i></div></div></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><h3>Token savers</h3><p>Trim 60–90% of tokens, transparently.</p></div>
+        <div class="cell"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 21h4"/></svg></div><h3>Ambient heartbeat</h3><p>It speaks up when something needs you — not before.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1004,9 +1256,53 @@ footer{border-top:1px solid var(--line); padding:54px 0 40px; margin-top:20px}
   var railToggle=document.getElementById("railToggle");
   if(railToggle && app) railToggle.addEventListener("click",function(){app.classList.toggle("rail-collapsed");});
   var cmdPath=document.querySelector(".cmd .path");
+  /* view switcher — rail tabs render full working UIs */
+  function switchView(v){
+    document.querySelectorAll(".view").forEach(function(el){el.classList.toggle("on",el.getAttribute("data-view")===v);});
+    document.querySelectorAll(".rail-nav .rn").forEach(function(r){r.classList.toggle("on",r.getAttribute("data-view")===v);});
+    if(v!=="canvas") closeInspector();
+  }
+  document.querySelectorAll(".rail-nav .rn").forEach(function(r){
+    r.addEventListener("click",function(){switchView(r.getAttribute("data-view"));});
+    r.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault(); switchView(r.getAttribute("data-view"));}});
+  });
+  /* sessions = use-cases that swap the canvas workflow */
+  var WF={
+    "website-migration":{prompt:"migrate the site to Next 16, revamp the hero + nav, keep SEO parity",
+      a:[["review","Review","Reviewer · PR #185 · 14 files","Reviewer","claude-opus-4.8"],["revamp","Revamp","Builder · PR #186 · hero + nav","Builder","claude-sonnet-5"],["migrate","Migrate","Migrator · v local · GRO-865","Migrator","claude-haiku-4.5"]]},
+    "blog-batch":{prompt:"write 5 SEO blog posts on agentic workflows, on brand, with hero images",
+      a:[["review","Research","Researcher · sources","Researcher","claude-sonnet-5"],["revamp","Draft","Writer · 5 posts","Writer","claude-opus-4.8"],["migrate","Illustrate","Designer · hero images","Designer","claude-haiku-4.5"]]},
+    "seo-pass":{prompt:"SEO audit + metadata pass across 42 routes for GRO-877",
+      a:[["review","Audit","Auditor · 42 routes","Auditor","claude-sonnet-5"],["revamp","Metadata","Builder · titles + og","Builder","claude-haiku-4.5"],["migrate","Schema","Builder · JSON-LD","Builder","claude-haiku-4.5"]]},
+    "benchmark-rerun":{prompt:"rerun the benchmark suite across models and diff the results",
+      a:[["review","Benchmark","Runner · 200 cases","Runner","claude-opus-4.8"],["revamp","Compare","Analyst · vs baseline","Analyst","claude-sonnet-5"],["migrate","Report","Writer · board","Writer","claude-haiku-4.5"]]}
+  };
+  function shortM(m){return m.replace("claude-","");}
+  function applyWorkflow(name){
+    var wf=WF[name]; if(!wf) return;
+    var pt=document.querySelector(".node-prompt .prompt-txt"); if(pt) pt.innerHTML='<span class="q">"</span>'+wf.prompt+'<span class="q">"</span>';
+    wf.a.forEach(function(a){
+      var node=document.querySelector('.cnode[data-node="'+a[0]+'"]'); if(!node) return;
+      var ttl=node.querySelector(".n-ttl"); if(ttl) ttl.textContent=a[1];
+      var sub=node.querySelector(".n-sub"); if(sub) sub.textContent=a[2];
+      var ag=node.querySelector('.mchip[data-role="agent"]'); if(ag){ag.setAttribute("data-agent",a[3]); ag.innerHTML=a[3]+' <span class="cv">▾</span>';}
+      var md=node.querySelector('.mchip[data-role="model"]'); if(md){md.setAttribute("data-model",a[4]); md.innerHTML=small(claudeMark,11)+shortM(a[4])+' <span class="cv">▾</span>';}
+    });
+  }
   document.querySelectorAll(".sess").forEach(function(s){s.addEventListener("click",function(){
     document.querySelectorAll(".sess").forEach(function(x){x.classList.remove("on");}); s.classList.add("on");
-    var slug=s.querySelector(".st"); if(cmdPath && slug) cmdPath.textContent="· "+slug.textContent;});});
+    var slug=s.querySelector(".st"); if(!slug) return; var name=slug.textContent;
+    if(cmdPath) cmdPath.textContent="· "+name;
+    if(name==="inbox-triage"){ switchView("inbox"); }
+    else { switchView("canvas"); applyWorkflow(name); }
+  });});
+  /* light interactivity inside the views */
+  document.addEventListener("click",function(e){
+    var b=e.target.closest(".inb-b"); if(b){b.parentNode.querySelectorAll(".inb-b").forEach(function(x){x.classList.remove("on");}); b.classList.add("on"); return;}
+    var r=e.target.closest(".inb-row"); if(r){r.parentNode.querySelectorAll(".inb-row").forEach(function(x){x.classList.remove("on");}); r.classList.add("on"); return;}
+    var c=e.target.closest(".mem-cat"); if(c){c.parentNode.querySelectorAll(".mem-cat").forEach(function(x){x.classList.remove("on");}); c.classList.add("on"); return;}
+    var t=e.target.closest(".toggle"); if(t){t.classList.toggle("on"); return;}
+  });
   var runBtns=document.querySelectorAll(".app-status .runctl b");
   if(runBtns.length>=2 && app){
     runBtns[0].addEventListener("click",function(){app.classList.remove("paused"); runBtns[0].classList.add("on"); runBtns[1].classList.remove("on");});
