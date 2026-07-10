@@ -48,6 +48,23 @@ Positioning: **100% open source** (MIT assumed), self-hostable, BYO Claude key. 
 - [ ] Reports enriched from ALEPH: add **Inbox triage** (urgent/needs-reply/fyi/noise + pre-drafted) + **Fleet heartbeat** (services/agents live·idle·down + metrics strip). Keep daily/weekly/cost/quarterly/benchmarks/front-page.
 - ALEPH source: ~/Documents/Code/aleph (yalla-brief, inbox-operator, daily-recap, usage meter, atlas home canvas of sessions).
 
+## v5 — SHIPPED + VERIFIED + GAUNTLET-HARDENED (2026-07-10). Interactive: collapsible rail, clickable sessions, node inspector w/ live log, ALEPH voice orb, model/agent pickers, run/view controls. Gauntlet (2 adversarial agents) → fixed: hero chop (anchor+edge-fade), feature-wall accent discipline, icon fidelity (SVG marks), --muted contrast (AA), micro-type floor, rail dead-zone (Views), dead CTAs wired (toast), inspector occlusion (scroll-into-view), keyboard access, voice dialog a11y. 0 console errors, dark+mobile pass.
+
+## v5 — RELEASE THE MONSTER (2026-07-10): full interactive demo, everything works
+Emotion: "this is a REAL app in the page" → "where's the repo". Spine: the conductor's console.
+- [ ] Hero = the canvas: slim the headline, enlarge the app to dominate.
+- [ ] **Collapsible sidebar** — chevron toggles rail full ↔ icon-strip, smooth.
+- [ ] **Clickable sessions** — click switches active session + updates command bar + status.
+- [ ] **Node inspector panel** — click a node → right-docked detail panel (streaming log, files, model, cost, quick actions) with close + click-out. The "it's real" moment.
+- [ ] **ALEPH voice orb** — mic FAB → overlay w/ canvas particle orb cycling idle/listening/thinking/speaking + captions ("Hey Aleph…"). Reduced-motion safe. The 1%.
+- [ ] **Fix icons** — proper OpenAI/xAI/Gemini marks (no lettermark tiles), consistent stroke/size, pixel-align every card/chip/row.
+- [ ] Run controls toggle a real paused state; Browser/Desktop toggle does something.
+- [ ] Keep: scroll+drag world, model/agent pickers, in-canvas reports+runtimes.
+- [ ] GAUNTLET: spawn parallel adversarial reviewers (design + code/QA + "beats GPT?"), fix, re-verify.
+- [ ] Ship: push → Pages rebuilds; verify live 200 + markers.
+
+## v4 — SHIPPED + VERIFIED (browser QA 2026-07-10): app-shell canvas, model/agent pickers, in-canvas reports+runtimes, sessions rail, status bar, 24-cell wall, dark+mobile. Repo pushed (9147a0c). Pages rebuilding.
+
 ## v4 (2026-07-10) — "closest validity of the visual" · make the page BE the product
 - [ ] Hero = full-scale immersive **app-shell canvas**: chrome + left **sessions rail** + bottom **status bar** (cost/controls/eta/live).
 - [ ] Canvas is a **scrollable world** (larger than viewport) + draggable nodes → explore the full flow.
